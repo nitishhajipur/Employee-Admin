@@ -37,6 +37,7 @@ const navigate=useNavigate()
 
                 }}>
       {({ errors, values, touched, setFieldValue }) => {
+        <>{console.log(values,"40.....")}</>
         return(
             <Form
             className='sighnInForm'>
@@ -60,7 +61,6 @@ const navigate=useNavigate()
         <div>
         <button type='submit' className='login'> Sighn In</button>
         <button type='button' onClick={sighnUp} className='sighnUp'> Sighn Up</button>
-
         </div>
 
     </Form>

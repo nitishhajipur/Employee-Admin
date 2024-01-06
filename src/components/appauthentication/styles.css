@@ -1,3 +1,5 @@
+
+/* sighnin Styles........ */
 .sighnIn{
     background-image: url('../../assets/appbackground.jpg');
     background-repeat: no-repeat;
@@ -62,4 +64,81 @@
 }
 .sighnUp:hover{
     box-shadow: 2px 2px 2px grey;
+}
+
+/* Sighn up Styles....................................................... */
+.sighnUpContaoner{
+    height: 100vh;
+    background: linear-gradient(180deg,#d3e3ff,#3c80fe,transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.formContainer{
+    background-color: rgba(32,65,126,0.65);
+    color: white;
+   min-width: 300px;
+    max-height: 600px;
+    /* height: auto; */
+    overflow: auto;
+    backdrop-filter: blur(50px);
+    box-shadow: 5px 3px 5px 0px grey;
+}
+.backToSighnIn{
+    background: lightcoral;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+.backToSighnIn:hover{
+    box-shadow: 5px 5px 5px wheat;
+}
+.registration{
+    margin: 10px 40px;
+}
+.fieldContainer{
+    padding: 5px;
+    width: 450px;
+}
+.submission button{
+    width: 90%;
+    text-align: center;
+    background: rgba(209,40,152,0.5);
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    border: 0px;
+    
+}
+.fieldContainer input[type="number"]::-webkit-inner-spin-button,
+.fieldContainer input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.submission{
+    margin-bottom: 10px;
+}
+.fieldContainer label{
+    width: 100%;
+    text-align: start;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.fieldContainer input{
+    background: rgba(53,106,140,0.75);
+    border-radius: 15px;
+    color: white;
+}
+.fieldContainer input::placeholder{
+    color: white;
+}
+.fieldContainer input:focus{
+    background-color:  rgba(53,106,140,0.75);
+    color: white;
+}
+.submission button:hover{
+    box-shadow: 2px 2px green;
 }
