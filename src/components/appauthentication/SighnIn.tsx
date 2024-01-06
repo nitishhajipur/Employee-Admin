@@ -60,7 +60,6 @@ const navigate=useNavigate()
         <div>
         <button type='submit' className='login'> Sighn In</button>
         <button type='button' onClick={sighnUp} className='sighnUp'> Sighn Up</button>
-
         </div>
 
     </Form>
