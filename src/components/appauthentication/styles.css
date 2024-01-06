@@ -1,3 +1,5 @@
+
+/* sighnin Styles........ */
 .sighnIn{
     background-image: url('../../assets/appbackground.jpg');
     background-repeat: no-repeat;
@@ -62,4 +64,31 @@
 }
 .sighnUp:hover{
     box-shadow: 2px 2px 2px grey;
+}
+
+/* Sighn up Styles....................................................... */
+.sighnUpContaoner{
+    height: 100vh;
+    background: linear-gradient(180deg,#d3e3ff,#3c80fe,transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.formContainer{
+    background-color: rgba(32,65,126,0.65);
+    color: white;
+    width: 300px;
+    height: 500px;
+    backdrop-filter: blur(50px);
+}
+.backToSighnIn{
+    background: lightcoral;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+.backToSighnIn:hover{
+    box-shadow: 5px 5px 5px wheat;
 }
