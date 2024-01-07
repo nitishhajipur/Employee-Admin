@@ -79,7 +79,7 @@
     background-color: rgba(32,65,126,0.65);
     color: white;
    min-width: 300px;
-    max-height: 600px;
+    max-height: 650px;
     /* height: auto; */
     overflow: auto;
     backdrop-filter: blur(50px);
@@ -99,7 +99,7 @@
     margin: 10px 40px;
 }
 .fieldContainer{
-    padding: 5px;
+    padding: 5px ;
     width: 450px;
 }
 .submission button{
