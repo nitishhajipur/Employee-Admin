@@ -11,8 +11,8 @@ const NavItems=()=>{
             <nav className="col-2">
                 <div className="nav-container">
                     <h6 className="mb-5 pt-3 ps-2">Admin Management</h6>
-                    <div className={pathname == '/menu/' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="./" className='nav-link'>Home</NavLink>
+                    <div className={pathname == '/menu' ? 'selected-nav' : 'nav-item'}>
+                        <NavLink to="/menu" className='nav-link'>Home</NavLink>
                     </div>
                     <div className={pathname == '/menu/users' ? 'selected-nav' : 'nav-item'}>
                         <NavLink to="./users" className='nav-link'>User Management</NavLink>

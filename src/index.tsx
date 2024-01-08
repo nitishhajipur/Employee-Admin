@@ -7,6 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './reducer/store';
+import "../node_modules/primereact/resources/themes/saga-blue/theme.css";
+// import '../node_modules/primereact/resources/themes/lara-light-indigo/theme.css';
+import '../node_modules/primereact/resources/primereact.css'
+// import "../node_modules/primereact/resources/themes/vela-blue/theme.css";
+import "../node_modules/primeicons/primeicons.css";
 
 
 const root = ReactDOM.createRoot(
