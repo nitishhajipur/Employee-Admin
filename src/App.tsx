@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router';
 import SighnUp from './components/appauthentication/SighnUp';
 import NavItems from './components/navbar/NavbarItem';
 import HomePage from './components/modules/Homepage';
-import UserPage from './components/modules/UserPage';
+import UserIndex from './components/modules/UsersPage/UsersIndex';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Route path={'/sighnUp'} element={<SighnUp/>}></Route>
       <Route path={'/menu'} element={<NavItems/>}>
       <Route index element={<HomePage/>}></Route>
-      <Route path={'/menu/users'} element={<UserPage/>}></Route>
+      <Route path={'/menu/users'} element={<UserIndex/>}></Route>
       </Route>
     </Routes>
     </div>

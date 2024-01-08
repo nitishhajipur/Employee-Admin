@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import { Application } from "./reducer";
 
- const IndexReducer=combineReducers({
+ const Reducer=combineReducers({
     application:Application
 
 })
-export default IndexReducer
+export default Reducer
 
