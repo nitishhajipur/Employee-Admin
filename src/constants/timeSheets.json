@@ -1,0 +1,99 @@
+[
+    {
+        "name":"Gouri Shanker",
+        "department":"IT Software",
+        "SubmiteedOn":"09/1/2024",
+        "status":"pending"
+    },
+    {
+        "name":"Akshay Mishta",
+        "department":"Sales And IT",
+        "SubmiteedOn":"04/1/2024",
+        "status":"Aprroved"
+    },
+    {
+        "name":"Nitish Kumar",
+        "department":"It Software",
+        "SubmiteedOn":"07/1/2024",
+        "status":"Re-Check"
+    },
+    {
+        "name":"Naveen Kumar",
+        "department":"Hr Department",
+        "SubmiteedOn":"05/1/2024",
+        "status":"pending"
+    },
+    {
+        "name":"Durga Prasad",
+        "department":"IT Software",
+        "SubmiteedOn":"07/1/2024",
+        "status":"pending"
+    },
+    {
+        "name":"Shanker",
+        "department":"Sales And IT",
+        "SubmiteedOn":"7/1/2024",
+        "status":"Approved"
+    },
+    {
+        "name":"Gouri ",
+        "department":"Shiva",
+        "SubmiteedOn":"05/1/2024",
+        "status":"pending"
+    },
+    {
+        "name":"Maheswari",
+        "department":"Hr Department",
+        "SubmiteedOn":"03/1/2024",
+        "status":"Approved"
+    },
+    {
+        "name":"Lalitha",
+        "department":"IT Software",
+        "SubmiteedOn":"03/1/2024",
+        "status":"pending"
+    },
+    {
+        "name":"Gouri Shanker",
+        "department":"Marketing",
+        "SubmiteedOn":"04/1/2024",
+        "status":"Approved"
+    },
+    {
+        "name":"Neeraj",
+        "department":"Marketing",
+        "SubmiteedOn":"04/1/2024",
+        "status":"Re-check"
+    },
+    {
+        "name":"Durga Prasad",
+        "department":"Finance",
+        "SubmiteedOn":"02/1/2024",
+        "status":"pending"
+    },
+    {
+        "name":"Gouri Shanker",
+        "department":"IT Software",
+        "SubmiteedOn":"09/1/2024",
+        "status":"pending"
+    },
+    {
+        "name":"Gouri Shanker",
+        "department":"IT Software",
+        "SubmiteedOn":"09/1/2024",
+        "status":"pending"
+    },
+    {
+        "name":"Gouri Shanker",
+        "department":"IT Software",
+        "SubmiteedOn":"09/1/2024",
+        "status":"pending"
+    },
+    {
+        "name":"Rajsekar",
+        "department":"IT Software",
+        "SubmiteedOn":"25/12/2023",
+        "status":"Approved"
+    }
+
+]

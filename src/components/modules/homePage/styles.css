@@ -1,0 +1,51 @@
+.adminDashboard .cardContainer:nth-child(1) .Common-card {
+    background:linear-gradient(45deg,#39cdc3,#31aed5,transparent);
+    color: white;
+    font-weight: 500;
+}
+.adminDashboard .cardContainer:nth-child(2) .Common-card {
+    background:linear-gradient(45deg,#ff8357,#fd829a,transparent);
+    color: white;
+    font-weight: 500;
+}
+.adminDashboard .cardContainer:nth-child(3) .Common-card {
+    background:linear-gradient(45deg,#ee70e9,#bd6af0,transparent);
+    color: white;
+    font-weight: 500;
+} 
+.adminDashboard .cardContainer:nth-child(1) .card-title{
+    font-size: 14px;
+    max-height: fit-content;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: black;
+    background:lightblue;
+
+}
+.adminDashboard .cardContainer:nth-child(2) .card-title{
+    font-size: 14px;
+    max-height: fit-content;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background:#fd829a;
+
+}
+.adminDashboard .cardContainer:nth-child(3) .card-title{
+    font-size: 14px;
+    max-height: fit-content;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: black;
+    background:#ee70e9;
+
+}
+.timesheetsTable .Common-card{
+    width: 98% !important;
+}

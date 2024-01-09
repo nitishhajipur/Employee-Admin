@@ -5,7 +5,7 @@ import SighnIn from './components/appauthentication/SighnIn';
 import { Route, Routes } from 'react-router';
 import SighnUp from './components/appauthentication/SighnUp';
 import NavItems from './components/navbar/NavbarItem';
-import HomePage from './components/modules/Homepage';
+import HomePage from './components/modules/homePage/Homepage';
 import UserIndex from './components/modules/UsersPage/UsersIndex';
 
 function App() {
