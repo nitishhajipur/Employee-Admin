@@ -256,6 +256,7 @@ function UserPage() {
       </CustomDialog> 
 
     <div className="">
+      
       <DataTable 
       value={UserData} 
       stripedRows 
