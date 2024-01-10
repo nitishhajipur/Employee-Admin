@@ -15,6 +15,7 @@ export default function CustomDialog(props: any) {
       padding: theme.spacing(2),
       width: props?.width,
       fontSize: "14px",
+      overflowY:'inherit !important'
     },
     "& .MuiDialogActions-root": {
       padding: theme.spacing(1),
