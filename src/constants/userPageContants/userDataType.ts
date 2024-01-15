@@ -7,6 +7,7 @@ export const UserInfo:UserModal={
     password:'',
     contactNo:'',
     department:'',
-    shiftDetails:'',
-    hourlyPay:null
+    shift:'',
+    hourlyPay:null,
+    employeeId:''
 }

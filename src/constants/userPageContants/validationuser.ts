@@ -1,4 +1,4 @@
-import React from "react";
+
 import * as Yup from "yup";
 
 export const validateUserSchema = Yup.object().shape({
@@ -7,7 +7,7 @@ export const validateUserSchema = Yup.object().shape({
   email: Yup.string().email('Enter a valid email').required("Please Enter Email"),
   contactNo: Yup.string().required("Please Enter Phone No"),
   password: Yup.string().required("Please Enter Password"),
-  shiftDetails: Yup.string().required("Please Select Shift Working In"),
+  shift: Yup.string().required("Please Select Shift Working In"),
   department: Yup.string().required("Please select Department"),
   hourlyPay:Yup.number().required("Enter Amount Paid Hourly")
 });

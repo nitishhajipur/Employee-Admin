@@ -1,67 +1,45 @@
 import React, { useEffect } from "react";
 import CustomDialog from "../../../common/CustomDialog";
 import '../../../common/styles.css';
-  import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 import ReactSelect from "../../../common/ReactSelect";
-// import { rolesOption, tabOptions } from "./SelectStaticOption";
-import { useDispatch, useSelector } from "react-redux";
-import LockResetIcon from '@mui/icons-material/LockReset';
-// import Select, { StylesConfig } from 'react-select';
-
-// import { validateUserSchema } from "./helpers/validate";
-import CommonSearchField from "../../../common/CommonSearchField";
+import axios from 'axios';
 import { validateUserSchema } from "../../../constants/userPageContants/validationuser";
 import { UserInfo } from "../../../constants/userPageContants/userDataType";
 import { Departments, shiftopt } from "../../../constants/userPageContants/staticOptions";
 
-function CreateUser(props:any) {
-  const [open, setOpen] = React.useState(false);
+function CreateUser(props: any) {
+
+  const { open, setOpen } = props
   const [error, setError] = React.useState(false);
-//   const { tabs,userDetails } = useSelector((state: any) => state.application);
-  const dispatch = useDispatch();
+
   const onClose = () => {
     setOpen(false);
     setError(false);
   };
-// console.log(tabs,"29---")
-//   const tabOptions = tabs[0]?.tabs?.map((item: any, index: any) => {
-//     let optionObject = { label: "", value: "" };
-//     optionObject.label = item;
-//     optionObject.value = item;
-//     return optionObject;
-//   });
 
-  const openDialog = () => {
-    setOpen(true);
-  };
-  useEffect(() => {
-    // dispatch(
-    //   fetchAllTabs((data: any) => {
-    //     console.log("25....", data);
-    //     dispatch({ type: Actiontypes.GET_ALL_TABS, payload: data });
-    //   })
-    // );
-  }, []);
+  function Fetch(param: any,callback:any) {
+    axios.post(param.url, param.values)
+      .then((response) => {
+        console.log(response);
+        if(callback){callback(response.status)}
+      }).catch((error: any) => {
+
+        console.log(error)
+
+      });
+  }
 
   const submitHandler = (values: any) => {
     console.log("17...", values);
-    // dispatch(
-    //   createUser(values, (data: any) => {
-    //     if (data.status === "success") {
-    //       onClose();
-
-    //       dispatch(
-    //         getAllUserDetails((data: any) => {
-              
-    //           dispatch({ type: Actiontypes.GET_ALL_USER_DATA, payload: data });
-    //         })
-    //       );
-    //     } else if (data.status === "error") {
-    //       setError(true);
-    //     }
-    //   })
-    // );
+    const url = "http://localhost:3006/api/createUser"
+    const payload={url:url,values:values}
+    Fetch(payload,(data:any)=>{
+      onClose();
+    })
   };
+
+
 
   return (
     <>
@@ -98,30 +76,11 @@ function CreateUser(props:any) {
             onSubmit={(values: any) => submitHandler(values)}
           >
             {({ values, errors, touched, setFieldValue }) => {
-              console.log('113....',values)
+              console.log('113....', values)
               return (
                 <Form id="createUser">
                   <div className="row ">
-                    {/* <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                      <label htmlFor="firstName">Organization Name:<span className="text-danger">*</span></label>
-                      <div>
-                        <span> <LockResetIcon/></span>
-                        <Field
-                          id="org_name"
-                          name="org_name"
-                          placeholder="Enter Your Org_name"
-                          value={values.orgName}
-                          disabled
-                          className={((touched?.password && errors.password) ? "inputerror" : "")}
-                          className="form-control form-control-md text-field"
-                        />
-                        <ErrorMessage
-                          name="role"
-                          component="div"
-                          className="text-danger"
-                        />
-                      </div> */}
-                    {/* </div> */}
+
                     <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                       <label htmlFor="firstName">First Name:<span className="text-danger">*</span></label>
                       <div>
@@ -179,7 +138,7 @@ function CreateUser(props:any) {
 
                   </div>
                   <div className="row ">
-                    
+
                     <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                       <label htmlFor="firstName">Phone no:<span className="text-danger">*</span></label>
                       <div>
@@ -232,16 +191,36 @@ function CreateUser(props:any) {
                           className="form-control form-control-md text-field"
                         />
                       </div>
-                        <ErrorMessage
-                          name="hourlyPay"
-                          component="div"
-                          className="text-danger"
-                        />
+                      <ErrorMessage
+                        name="hourlyPay"
+                        component="div"
+                        className="text-danger"
+                      />
                     </div>
 
 
                   </div>
                   <div className="row ">
+                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                      <label htmlFor="firstName">Employee Id:<span className="text-danger">*</span></label>
+                      <div>
+                        {/* <span> <LockResetIcon/></span> */}
+                        <Field
+                          id="password"
+                          name="employeeId"
+                          placeholder="Enter Employee Id"
+                          type="text"
+                          value={values.employeeId}
+                          // className={((touched?.password && errors.password) ? "inputerror" : "")}
+                          className="form-control form-control-md text-field"
+                        />
+                        <ErrorMessage
+                          name="employeeId"
+                          component="div"
+                          className="text-danger"
+                        />
+                      </div>
+                    </div>
                     <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                       <label htmlFor="department">Department:<span className="text-danger">*</span></label>
                       <div>
@@ -250,12 +229,13 @@ function CreateUser(props:any) {
                           id={"department"}
                           placeHolder={"department"}
                           value={values.department}
-                           options={Departments}
+                          options={Departments}
                           isMulti={false}
-                          
-                          onChange={(e: any) =>
-                            {console.log('249...',e)
-                            setFieldValue("department", e.value)}
+
+                          onChange={(e: any) => {
+                            console.log('249...', e)
+                            setFieldValue("department", e.value)
+                          }
                           }
                         // className={((touched?.allowedModule && errors.allowedModule) ? "selecterror" : "")}
                         />
@@ -270,15 +250,15 @@ function CreateUser(props:any) {
                       <label htmlFor="shiftDetails">Shift Details:<span className="text-danger">*</span></label>
                       <div>
                         <ReactSelect
-                          name={"shiftDetails"}
+                          name={"shift"}
                           id={"shiftDetails"}
                           placeHolder={"Select Shift"}
-                         options={shiftopt}
-                          value={values.shiftDetails}
-                          onChange={(e: any) => setFieldValue("shiftDetails", e.value)}
+                          options={shiftopt}
+                          value={values.shift}
+                          onChange={(e: any) => setFieldValue("shift", e.value)}
                         // className={((touched?.role && errors.role) ? "selecterror" : "")}
                         />
-                        <ErrorMessage name="shiftDetails" component="div" className="text-danger" />
+                        <ErrorMessage name="shift" component="div" className="text-danger" />
                       </div>
                     </div>
                   </div>
