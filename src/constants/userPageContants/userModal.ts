@@ -5,6 +5,7 @@ export type UserModal={
     password:string,
     contactNo:string,
     department:string,
-    shiftDetails:string,
-    hourlyPay:number|null
+    shift:string,
+    hourlyPay:number|null,
+    employeeId:string
 }
