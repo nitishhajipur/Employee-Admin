@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import SighnIn from './components/appauthentication/SighnIn';
+import SignIn from './components/appauthentication/SignIn';
 import { Route, Routes } from 'react-router';
-import SighnUp from './components/appauthentication/SighnUp';
+import SignUp from './components/appauthentication/SignUp';
 import NavItems from './components/navbar/NavbarItem';
 import HomePage from './components/modules/homePage/Homepage';
 import UserIndex from './components/modules/UsersPage/UsersIndex';
+import UserProfile from './components/modules/UserProfile/UserProfile';
 
 function App() {
   return (
     <div className="App">
-    <Routes>
-      <Route path={'/'} element={<SighnIn/>}></Route>
-      <Route path={'/sighnUp'} element={<SighnUp/>}></Route>
-      <Route path={'/menu'} element={<NavItems/>}>
-      <Route index element={<HomePage/>}></Route>
-      <Route path={'/menu/users'} element={<UserIndex/>}></Route>
-      </Route>
-    </Routes>
+      <Routes>
+        <Route path={'/'} element={<SignIn />}></Route>
+        <Route path={'/signUp'} element={<SignUp />}></Route>
+        <Route path={'/menu'} element={<NavItems />}>
+          <Route index element={<HomePage />}></Route>
+          <Route path={'/menu/users'} element={<UserIndex />}></Route>
+          <Route path='/menu/userProfile' element={<UserProfile />}></Route>
+        </Route>
+      </Routes>
     </div>
   );
 }

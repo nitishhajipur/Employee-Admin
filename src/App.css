@@ -13,17 +13,19 @@
   }
 }
 .App-container {
-  background-color: rgb(13, 13, 13);
-  color: white;
-  /* height: 100vh; */
+  background-color: #f1f1f1;
+  color: black;
+  height: 100vh;
+
 }
 .nav-container{
   display: block;
   min-width: 10rem;
   padding-right: 2rem;
   /* border-right: 1px solid rgb(75, 89, 89); */
-  height: 100vh;
-  /* box-shadow: 0px 0px 2px white; */
+  height: 100%;
+  box-shadow: 0px 0px 6px rgb(176, 174, 174);
+  z-index: 99 !important;
 }
 .nav-item{
   width: 100% !important;
@@ -39,13 +41,15 @@
 .selected-nav{
   /* background-color: lightcyan; */
   padding: 1em;
-  color: lightcyan;
+  color:lightcoral;
   border-bottom: 1px solid lightcoral;
   margin-left: 1em;
 }
 .body-container{
-  background-color: white;
+  background-color: f1f1f1;
   color: black;
+  z-index: 0;
+  /* box-shadow: 0px 10px 0px black; */
 }
 .nav-item:hover{
   background-color: lightgray;

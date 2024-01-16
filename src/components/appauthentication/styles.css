@@ -30,7 +30,7 @@
 .credentailsContainer{
     text-align: center;
 }
-.sighnInForm .field input{
+.signInForm .field input{
     margin: auto;
     width: 90%;
 }
@@ -85,14 +85,14 @@
     backdrop-filter: blur(50px);
     box-shadow: 5px 3px 5px 0px grey;
 }
-.backToSighnIn{
+.backToSignIn{
     background: lightcoral;
     border-radius: 25px;
     margin: 5px;
     padding: 2px;
     cursor: pointer;
 }
-.backToSighnIn:hover{
+.backToSignIn:hover{
     box-shadow: 5px 5px 5px wheat;
 }
 .registration{
