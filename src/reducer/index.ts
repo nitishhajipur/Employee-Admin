@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import { Application } from "./reducer";
 
- const Reducer=combineReducers({
+ const MainReducer=combineReducers({
     application:Application
 
 })
-export default Reducer
+export default MainReducer
 

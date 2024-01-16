@@ -7,6 +7,8 @@ import NavItems from './components/navbar/NavbarItem';
 import HomePage from './components/modules/homePage/Homepage';
 import UserIndex from './components/modules/UsersPage/UsersIndex';
 import UserProfile from './components/modules/UserProfile/UserProfile';
+import ApprovalsIndex from './components/modules/approvals/ApprovalsTab';
+// import { useSelector } from 'react-redux';
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route index element={<HomePage />}></Route>
           <Route path={'/menu/users'} element={<UserIndex />}></Route>
           <Route path='/menu/userProfile' element={<UserProfile />}></Route>
+          <Route path={'/menu/Approvals'} element={<ApprovalsIndex/>}></Route>
         </Route>
       </Routes>
     </div>

@@ -11,6 +11,11 @@ import Typography from "@mui/material/Typography";
 export default function CustomDialog(props: any) {
   const { children, onClose, ...other } = props;
   const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+    "& .MuiPaper-root":{
+      overflowY:'unset !important',
+      // display:"none"
+
+    },
     "& .MuiDialogContent-root": {
       padding: theme.spacing(2),
       width: props?.width,
@@ -68,6 +73,7 @@ export default function CustomDialog(props: any) {
         open={props.open}
         maxWidth={props.maxWidth ? props.maxWidth : "lg"}
         fullWidth={props.fullWidth === false ? false : true}
+        className="MainContainer"
       >
         <DialogTitle
           sx={{ m: 0, p: 2, display: "flex", alignItems: 'center' }}

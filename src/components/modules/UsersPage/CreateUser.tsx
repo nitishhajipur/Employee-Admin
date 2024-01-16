@@ -7,11 +7,14 @@ import axios from 'axios';
 import { validateUserSchema } from "../../../constants/userPageContants/validationuser";
 import { UserInfo } from "../../../constants/userPageContants/userDataType";
 import { Departments, shiftopt } from "../../../constants/userPageContants/staticOptions";
+import EditIcon from "@mui/icons-material/Edit";
+
 
 function CreateUser(props: any) {
 
-  const { open, setOpen } = props
+  const { rowData } = props
   const [error, setError] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(false);
@@ -38,31 +41,28 @@ function CreateUser(props: any) {
       onClose();
     })
   };
+  const openDialog = () => {
+    setOpen(true);
+  };
 
 
 
   return (
     <>
-      {/* <div className="d-flex justify-content-end my-2">
-        <button type="button" className="btn btn-primary " onClick={openDialog}>Create User</button>
-      </div> */}
-      {/* <div className="d-flex justify-content-end">
-        <div>
-          <CommonSearchField placeholder={"Search users here..."} />
-        </div>
-        <div style={{ padding: "0px 6px", margin: "1rem" }}>
-          <button type="button" className="btn btn-primary " onClick={openDialog}>Create User</button>
-        </div>
-      </div> */}
+    
+    {rowData?.id?
+     <span onClick={openDialog}><EditIcon /></span>:
+     <button type="button" className="btn btn-primary " onClick={openDialog}>Create User</button>
+    }
       <CustomDialog
-        title={"Create User"}
+        title={(rowData?.id)?"Update User":"Create User"}
         open={open}
         onClose={onClose}
-        actionType={"Submit"}
+        actionType={(rowData?.id)?"Update":"Submit"}
         maxWidth="md"
         fullWidth={true}
         form={"createUser"}
-        onSubmitHandler={() => { }}
+        // onSubmitHandler={() => { }}
       >
         <div>
           {error && (
@@ -71,7 +71,7 @@ function CreateUser(props: any) {
             </p>
           )}
           <Formik
-            initialValues={UserInfo}
+            initialValues={(rowData?.id)?rowData:UserInfo}
             validationSchema={validateUserSchema}
             onSubmit={(values: any) => submitHandler(values)}
           >
