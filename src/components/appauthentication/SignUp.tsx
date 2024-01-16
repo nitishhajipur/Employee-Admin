@@ -3,7 +3,7 @@ import './styles.css'
 import { useNavigate } from 'react-router'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
-const SighnUp=(props:any)=>{
+const SignUp=(props:any)=>{
     const navigate=useNavigate()
     const validationSchema=Yup.object().shape({
         Name:Yup.string().required('! Please Enter Full Name'),
@@ -20,8 +20,8 @@ const SighnUp=(props:any)=>{
         <>
         <div className='sighnUpContaoner'>
             <div className='formContainer'>
-            <div className='backToSighnIn' onClick={(e:any)=>navigate('/')}>
-                <span>Back to SighnIn</span>
+            <div className='backToSignIn' onClick={(e:any)=>navigate('/')}>
+                <span>Back to SignIn</span>
             </div>
                 <Formik
                 validationSchema={validationSchema}
@@ -127,4 +127,4 @@ const SighnUp=(props:any)=>{
     )
 
 }
-export default SighnUp
+export default SignUp
