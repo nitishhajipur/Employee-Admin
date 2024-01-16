@@ -7,7 +7,6 @@ export default function UserIndex() {
   
   return (
     <CommonCard title={'User management'}>
-      <CreateUser />
       <UserPage/>
     </CommonCard>
   );

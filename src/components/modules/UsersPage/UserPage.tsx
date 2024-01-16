@@ -3,7 +3,6 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import UserData from "../../../constants/usersData.json";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 
 import { useNavigate } from "react-router-dom";
 import CustomDialog from "../../../common/CustomDialog";
@@ -27,34 +26,32 @@ function UserPage() {
 
   }, []);
 
-  const [open, setOpen] = React.useState(false);
+ 
 
-  const openDialog = () => {
-    setOpen(true);
-  };
+ 
 
 
 
-  const actionTemplate = () => {
+  const actionTemplate = (rowData:any) => {
+    console.log(rowData,"12122")
     return (
-      <>
-        <span onClick={openDialog}><EditIcon /></span>
-        |  &nbsp;
-        <DeleteIcon />
-      </>
+      <div className="d-flex">
+      <CreateUser rowData={rowData}/>|&nbsp;
+       <DeleteIcon />
+      </div>
     );
   };
 
   return (
     <>
-      <CreateUser open={open} setOpen={setOpen} />
-      <div className="">
+    
+          <div className="">
         <div className="d-flex justify-content-end">
           <div>
             <CommonSearchField placeholder={"Search users here..."} />
           </div>
           <div style={{ padding: "0px 6px", margin: "1rem" }}>
-            <button type="button" className="btn btn-primary " onClick={openDialog}>Create User</button>
+            <CreateUser/>
           </div>
         </div>
 
@@ -69,7 +66,7 @@ function UserPage() {
           scrollable scrollHeight="390px"
         >
           <Column field="firstName" header="User Name"></Column>
-          <Column field="role" header="Role"></Column>
+          <Column field="department" header="Department"></Column>
           <Column field="email" header="Email"></Column>
           <Column field="contactNo" header="Phone Number"></Column>
           <Column body={actionTemplate} header="Actions"></Column>

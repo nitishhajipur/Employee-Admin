@@ -1,14 +1,19 @@
 [{
     "id": "1",
-    "firstName": "Akshay Mishra",
-    "role": "Admin",
+    "firstName": "Akshay",
+    "lastName":"Mishra",
+    "hourlyPay":20000,
+    "department": "Admin",
     "email":"akshay01@gmail.com",
-    "contactNo":9113775373
+    "contactNo":9113775373,
+    "employeeId":"12781",
+    "shift":"General",
+    "password":"123456"
 },
 {
     "id": "2",
     "firstName": "Gori Shankar",
-    "role": "Student Admin",
+    "department": "Student Admin",
     "email":"Gori@gmail.com",
     "contactNo":9113775374
 },

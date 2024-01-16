@@ -17,6 +17,9 @@ const NavItems=()=>{
                     <div className={pathname == '/menu/users' ? 'selected-nav' : 'nav-item'}>
                         <NavLink to="./users" className='nav-link'>User Management</NavLink>
                     </div>
+                    <div className={pathname == '/menu/Approvals' ? 'selected-nav' : 'nav-item'}>
+                        <NavLink to="./Approvals" className='nav-link'> Approvals</NavLink>
+                    </div>
                 </div>
             </nav>
             <div className="col-10 container-fluid p-2 body-container">
