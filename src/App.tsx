@@ -7,6 +7,8 @@ import SighnUp from './components/appauthentication/SighnUp';
 import NavItems from './components/navbar/NavbarItem';
 import HomePage from './components/modules/homePage/Homepage';
 import UserIndex from './components/modules/UsersPage/UsersIndex';
+import ApprovalsIndex from './components/modules/approvals/ApprovalsTab';
+// import { useSelector } from 'react-redux';
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
       <Route path={'/menu'} element={<NavItems/>}>
       <Route index element={<HomePage/>}></Route>
       <Route path={'/menu/users'} element={<UserIndex/>}></Route>
+      <Route path={'/menu/Approvals'} element={<ApprovalsIndex/>}></Route>
       </Route>
     </Routes>
     </div>
