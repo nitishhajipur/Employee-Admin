@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import UserData from "../../../constants/usersData.json";
+import UserData from "../../../constants/userPageContants/usersData.json";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { useNavigate } from "react-router-dom";
@@ -66,7 +66,7 @@ function UserPage() {
           scrollable scrollHeight="390px"
         >
           <Column field="firstName" header="User Name"></Column>
-          <Column field="department" header="Department"></Column>
+          <Column field="department.label" header="Department"></Column>
           <Column field="email" header="Email"></Column>
           <Column field="contactNo" header="Phone Number"></Column>
           <Column body={actionTemplate} header="Actions"></Column>

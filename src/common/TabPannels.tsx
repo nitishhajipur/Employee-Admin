@@ -4,8 +4,6 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import SubmittedSheets from '../components/modules/approvals/SubmittedSheets';
-
 const  TabPanelsComponent=(props:any)=> {
     const {data}=props
   const [value, setValue] = React.useState(data['0']?.id);
@@ -53,3 +51,40 @@ const  TabPanelsComponent=(props:any)=> {
   );
 }
 export default TabPanelsComponent
+// import React from 'react'
+// import { useState } from 'react';
+// import Tab from 'react-bootstrap/Tab';
+// import Tabs from 'react-bootstrap/Tabs';
+
+// function TabPanelsComponent(props:any) {
+//   const {data}=props
+//   const [key, setKey] = useState(data['0']?.id);
+
+//   return (
+//     <Tabs
+//       id="controlled-tab-example"
+//       activeKey={key}
+//       onSelect={(k:any) => setKey(k)}
+//       className="mb-3"
+//     >
+//       {
+
+//         data?.map((tabmenu:any,index:number)=>{
+//                   return(
+//                     <Tab eventKey={tabmenu?.id} title={tabmenu?.name}>
+//          <React.Suspense>
+
+
+// <tabmenu.component/>                     </React.Suspense>
+//       </Tab>
+                    
+//                   )})
+            
+//           }
+//     </Tabs>
+//   );
+// }
+
+// export default TabPanelsComponent;
+
+

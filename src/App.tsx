@@ -12,17 +12,18 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { appTypes } from './reducer/types';
 
+
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path={'/'} element={<SignIn />}></Route>
-        <Route path={'/signUp'} element={<SignUp />}></Route>
-        <Route path={'/menu'} element={<NavItems />}>
-          <Route index element={<HomePage />}></Route>
-          <Route path={'/menu/users'} element={<UserIndex />}></Route>
-          <Route path='/menu/userProfile' element={<UserProfile />}></Route>
-          <Route path={'/menu/Approvals'} element={<ApprovalsIndex/>}></Route>
+        <Route index element={<SignIn />}></Route>
+        <Route path={"/signUp"} element={<SignUp />}></Route>
+        <Route path={"/"} element={<NavItems />}>
+          <Route path={"/home"} element={<HomePage />}></Route>
+          <Route path={"/users"} element={<UserIndex />}></Route>
+          <Route path={"/userProfile"} element={<UserProfile />}></Route>
+          <Route path={"/Approvals"} element={<ApprovalsIndex/>}></Route>
         </Route>
       </Routes>
     </div>

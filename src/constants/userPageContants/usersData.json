@@ -1,0 +1,29 @@
+[{
+    "id": "1",
+    "firstName": "Akshay",
+    "lastName":"Mishra",
+    "hourlyPay":20000,
+    "department": {"label":"HR Department","value":"hr"},
+    "email":"akshay01@gmail.com",
+    "contactNo":9113775373,
+    "employeeId":"12781",
+    "shift": {"label":"Evening","value":"2pm to 11pm"},
+    "password":"123456"
+},
+{
+    "id": "2",
+    "firstName": "Gori Shankar",
+    "department": {"label":"Marketing","value":"marketing"},
+    "email":"Gori@gmail.com",
+    "contactNo":9113775374,
+    "shift":    {"label":"General","value":"9am to 6pm"}
+},
+{
+    "id": "3",
+    "firstName": "Aniket Kumar",
+    "department":  {"label":"Sales & It" ,"value":"sales&it"},
+    "email":"aniket@gmail.com",
+    "contactNo":9113775375,
+    "shift":    {"label":"Night Shift","value":"7pm to 4am"}
+}
+]
