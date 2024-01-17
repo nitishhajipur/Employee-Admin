@@ -1,0 +1,54 @@
+[
+    {
+        "id":"1",
+      "userName": "NitishKumar",
+      "department": "Sales & It",
+
+      "timeSheetDuration": "4/1/24 to 8/1/24",
+      "status": "Approved",
+      "isApproved": true,
+      "comments": [],
+      "dateOfSubmisson": "10/1/24",
+      "dateOfApproval": "12/1/24"
+    },
+    {
+        "id":"3",
+      "userName": "Shiva",
+      "department": "Sales & It",
+      "timeSheetDuration": "14/1/23 to 19/1/23",
+      "status": "Approved",
+      "isApproved": true,
+      "comments": [
+        {
+          "user": "admin",
+          "comment": "Please check the in time of monday"
+        },
+        {
+          "user": "Shiva",
+          "comment": "Its being Revised"
+        }
+      ],
+      "dateOfSubmisson": "21/1/23",
+      "dateOfApproval":"24/1/23"
+    },
+    {
+        "id":"4",
+      "userName": "shanker",
+      "department": "Finnance Department",
+      "timeSheetDuration": "21/12/23 to 26/12/23",
+      "status": "Approved",
+      "isApproved": true,
+      "comments": [
+        {
+          "user": "admin",
+          "comment": "Please check the in time of monday"
+        },
+        {
+          "user": "shanker",
+          "comment": "Its The Correct Once Please Consider it"
+        }
+      ],
+      "dateOfSubmisson": "1/12/24",
+      "dateOfApproval":"7/1/24"
+    }
+  ]

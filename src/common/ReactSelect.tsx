@@ -14,7 +14,7 @@ export default function ReactSelect(props: any) {
                 placeholder={props.placeHolder}
                 isSearchable={true}
                 onChange={props.onChange}
-                value={props.values?.value === "" ? [] : props.values}
+                value={props.value?.value === "" ? [] : props.value}
                 className={props.className}
                 onBlur={props.onBlur}
                 isDisabled={props?.disabled}
