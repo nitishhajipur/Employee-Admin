@@ -33,7 +33,7 @@ const SignIn = () => {
                             initialValues={{ userName: '', password: '' }}
                             validationSchema={schema}
                             onSubmit={(values: any) => {
-                                navigate('/menu')
+                                navigate('/home')
 
                             }}>
                             {({ errors, values, touched, setFieldValue }) => {

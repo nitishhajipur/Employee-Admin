@@ -1,8 +1,11 @@
 import React from 'react'
+import SheetsDataList from './commonComponents/TableWithSheetList'
+import sumittedSheets from '../../../constants/ApprovalsTabConstants/SubmittedSheets.json'
+
 const SubmittedSheets=()=>{
     return(
         <>
-        <p>SubmittedSheets</p>
+        <SheetsDataList title={"Submitted Sheeets Table List "} data={sumittedSheets}/>
         </>
     )
 }

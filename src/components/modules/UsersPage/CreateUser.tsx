@@ -234,7 +234,7 @@ function CreateUser(props: any) {
 
                           onChange={(e: any) => {
                             console.log('249...', e)
-                            setFieldValue("department", e.value)
+                            setFieldValue("department", e)
                           }
                           }
                         // className={((touched?.allowedModule && errors.allowedModule) ? "selecterror" : "")}
@@ -255,7 +255,7 @@ function CreateUser(props: any) {
                           placeHolder={"Select Shift"}
                           options={shiftopt}
                           value={values.shift}
-                          onChange={(e: any) => setFieldValue("shift", e.value)}
+                          onChange={(e: any) => setFieldValue("shift", e)}
                         // className={((touched?.role && errors.role) ? "selecterror" : "")}
                         />
                         <ErrorMessage name="shift" component="div" className="text-danger" />
