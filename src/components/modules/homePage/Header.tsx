@@ -28,8 +28,8 @@ function Header() {
         }
     };
     return (
-        <header className='d-flex justify-content-between'>
-            <h6 className="d-flex justify-content-center header"> Admin</h6>
+        <header>
+            
             <div className='d-flex justify-content-end me-5'>
                 <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                     <Tooltip title="Account settings">
