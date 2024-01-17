@@ -48,6 +48,17 @@ export default function CustomDialog(props: any) {
       maxHeight: "32px",
       lineHeight: "32px",
       marginLeft:"5px",
+      "&:hover":{
+        // color: "white !important",
+        backgroundColor: "rgba(6,95,212,255) !important",
+  
+      },
+      "&:focua":{
+        // color: "white !important",
+        backgroundColor: "rgba(6,95,212,255) !important",
+  
+      },
+     
     },
     "& .btn-esecondary": {
       fontSize: "13px",

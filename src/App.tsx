@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import SignIn from './components/appauthentication/SignIn';
 import { Route, Routes } from 'react-router';
@@ -8,7 +8,9 @@ import HomePage from './components/modules/homePage/Homepage';
 import UserIndex from './components/modules/UsersPage/UsersIndex';
 import UserProfile from './components/modules/UserProfile/UserProfile';
 import ApprovalsIndex from './components/modules/approvals/ApprovalsTab';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { appTypes } from './reducer/types';
 
 function App() {
   return (
