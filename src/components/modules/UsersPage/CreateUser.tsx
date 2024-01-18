@@ -8,38 +8,51 @@ import { validateUserSchema } from "../../../constants/userPageContants/validati
 import { UserInfo } from "../../../constants/userPageContants/userDataType";
 import { Departments, shiftopt } from "../../../constants/userPageContants/staticOptions";
 import EditIcon from "@mui/icons-material/Edit";
+import { FetchData } from "../../../config/Fetch";
+import { CreateNewUser, GetAllUserData, updateUser } from "./actions";
+import { useDispatch } from "react-redux";
 
 
 function CreateUser(props: any) {
-
-  const { rowData } = props
+  const { rowData,setUserData } = props
   const [error, setError] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const dispatch=useDispatch()
 
   const onClose = () => {
     setOpen(false);
     setError(false);
   };
 
-  function Fetch(param: any,callback:any) {
-    axios.post(param.url, param.values)
-      .then((response) => {
-        console.log(response);
-        if(callback){callback(response.status)}
-      }).catch((error: any) => {
 
-        console.log(error)
-
-      });
-  }
 
   const submitHandler = (values: any) => {
     console.log("17...", values);
-    const url = "http://localhost:3006/api/createUser"
-    const payload={url:url,values:values}
-    Fetch(payload,(data:any)=>{
-      onClose();
-    })
+    const data={...values,
+      department:values.department.value,
+      shift:values.shift.value
+    }
+    if(!rowData?._id){
+
+      dispatch(CreateNewUser(data,(response:any)=>{
+        console.log(response,"47.....")
+        dispatch(GetAllUserData((data: any) => {
+          console.log('41....', data)
+          setUserData(data)
+          onClose();
+        }))
+        
+      }))
+    }
+    else{
+      dispatch(updateUser(data,(response:any)=>{
+        dispatch(GetAllUserData((userData: any) => {
+          setUserData(userData)
+          onClose();
+        }))
+      }))
+
+    }
   };
   const openDialog = () => {
     setOpen(true);
@@ -50,15 +63,15 @@ function CreateUser(props: any) {
   return (
     <>
     
-    {rowData?.id?
+    {rowData?._id?
      <span onClick={openDialog}><EditIcon /></span>:
      <button type="button" className="btn btn-primary " onClick={openDialog}>Create User</button>
     }
       <CustomDialog
-        title={(rowData?.id)?"Update User":"Create User"}
+        title={(rowData?._id)?"Update User":"Create User"}
         open={open}
         onClose={onClose}
-        actionType={(rowData?.id)?"Update":"Submit"}
+        actionType={(rowData?._id)?"Update":"Submit"}
         maxWidth="md"
         fullWidth={true}
         form={"createUser"}
@@ -71,7 +84,7 @@ function CreateUser(props: any) {
             </p>
           )}
           <Formik
-            initialValues={(rowData?.id)?rowData:UserInfo}
+            initialValues={(rowData?._id)?rowData:UserInfo}
             validationSchema={validateUserSchema}
             onSubmit={(values: any) => submitHandler(values)}
           >
