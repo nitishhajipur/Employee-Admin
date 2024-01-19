@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-import './styles.css';
+import './styles.scss';
 
 function CommonSearchField(props: any) {
     return (

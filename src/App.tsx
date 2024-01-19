@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './App.css';
+import './App.scss';
 import SignIn from './components/appauthentication/SignIn';
 import { Route, Routes } from 'react-router';
 import SignUp from './components/appauthentication/SignUp';
@@ -11,11 +11,13 @@ import ApprovalsIndex from './components/modules/approvals/ApprovalsTab';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { appTypes } from './reducer/types';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
   return (
     <div className="App">
+      <ToastContainer/>
       <Routes>
         <Route index element={<SignIn />}></Route>
         <Route path={"/signUp"} element={<SignUp />}></Route>

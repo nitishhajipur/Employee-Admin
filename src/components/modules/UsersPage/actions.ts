@@ -8,7 +8,7 @@ export const CreateNewUser:any=(props:any,callback:any)=>{
             method:'POST',
             data:props
           }).then((response:any)=>{
-            callback(response)
+            callback(response.data)
           }).catch((error:any)=>{})
 
     })
@@ -28,6 +28,8 @@ export const GetAllUserData:any=(callback:any)=>{
                 // console.log(Departments,userData,"26.......")
               })
             callback(response.data)
+        }).catch((error:any)=>{
+            console.log(error)
         })
 
     })
@@ -41,7 +43,10 @@ export const DeleteUser:any=(props:any,callback:any)=>{
             method:'DELETE',
             data:null
         }).then((response:any)=>{
-            callback(response)
+            console.log(response,"46...rep")
+            callback(response.data)
+        }).catch((error:any)=>{
+            console.log(error)
         })
 
     })
@@ -54,7 +59,7 @@ export const updateUser:any=(props:any,callback:any)=>{
             method:'PATCH',
             data:props
           }).then((response:any)=>{
-            callback(response)
+            callback(response.data)
           }).catch((error:any)=>{})
 
     })

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import './styles.css';
+import './styles.scss';
 
 export interface cardProps {
     className?: string

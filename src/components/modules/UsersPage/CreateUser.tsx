@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import CustomDialog from "../../../common/CustomDialog";
-import '../../../common/styles.css';
+import '../../../common/styles.scss';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import ReactSelect from "../../../common/ReactSelect";
 import axios from 'axios';
@@ -11,6 +11,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import { FetchData } from "../../../config/Fetch";
 import { CreateNewUser, GetAllUserData, updateUser } from "./actions";
 import { useDispatch } from "react-redux";
+import CustomTooltip from "../../../common/CustomTooltip";
+import { toast } from "react-toastify";
 
 
 function CreateUser(props: any) {
@@ -35,7 +37,13 @@ function CreateUser(props: any) {
     if(!rowData?._id){
 
       dispatch(CreateNewUser(data,(response:any)=>{
-        console.log(response,"47.....")
+        if(response.status === 'success'){
+          toast.success(response.message)
+
+        }
+        else{
+          toast.error(response.message)
+        }
         dispatch(GetAllUserData((data: any) => {
           console.log('41....', data)
           setUserData(data)
@@ -46,6 +54,13 @@ function CreateUser(props: any) {
     }
     else{
       dispatch(updateUser(data,(response:any)=>{
+        if(response.status ==='success'){
+          toast.success(response.message)
+
+        }
+        else{
+          toast.error(response.message)
+        }
         dispatch(GetAllUserData((userData: any) => {
           setUserData(userData)
           onClose();
@@ -64,7 +79,10 @@ function CreateUser(props: any) {
     <>
     
     {rowData?._id?
-     <span onClick={openDialog}><EditIcon /></span>:
+     <span onClick={openDialog}><CustomTooltip title={"Edit"} position={'top'}>
+      <EditIcon />
+      </CustomTooltip>
+      </span>:
      <button type="button" className="btn btn-primary " onClick={openDialog}>Create User</button>
     }
       <CustomDialog
