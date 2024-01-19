@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import rightPortionImage from '../../assets/leftcoverpoto.webp'
-import './styles.css'
+import './styles.scss'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 const SignIn = () => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import DeleteIcon from "@mui/icons-material/Delete";
-import '../../../common/styles.css';
+import '../../../common/styles.scss';
 import CommonSearchField from "../../../common/CommonSearchField";
 import CreateUser from "./CreateUser";
 import axios from "axios";
@@ -11,6 +11,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { DeleteUser, GetAllUserData } from "./actions";
 import { appTypes } from "../../../reducer/types";
+import CustomTooltip from "../../../common/CustomTooltip";
+import { toast } from "react-toastify";
 
 function UserPage() {
   const [userData, setUserData] = useState<any>([])
@@ -30,11 +32,17 @@ function UserPage() {
     }
   }, []);
   const handleDeleteUser = (rowData: any) => {
-    console.log('65...', rowData)
     const payload={id:rowData._id}
-    dispatch(DeleteUser(payload, (data: any) => {
+    dispatch(DeleteUser(payload, (response: any) => {
+      if(response.status === "success"){
+        toast.success(response.message)
+
+      }
+      else{
+        toast.error(response.message)
+      }
+
       dispatch(GetAllUserData((data: any) => {
-        console.log('41....', data)
         setUserData(data)
       }))
     }))
@@ -45,7 +53,9 @@ function UserPage() {
     return (
       <div className="d-flex">
        <CreateUser rowData={rowData} setUserData={setUserData}/>|&nbsp;
-        <DeleteIcon onClick={() => handleDeleteUser(rowData)} />
+        <CustomTooltip title={"Delete"} position={"top"}>
+          <DeleteIcon onClick={() => handleDeleteUser(rowData)} />
+          </CustomTooltip>
       </div>
     );
   };

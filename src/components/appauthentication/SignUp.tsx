@@ -1,5 +1,5 @@
 import Reacrt from 'react'
-import './styles.css'
+import './styles.scss'
 import { useNavigate } from 'react-router'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'

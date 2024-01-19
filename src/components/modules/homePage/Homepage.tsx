@@ -1,6 +1,6 @@
 import React from 'react'
 import CommonCard from '../../../common/CommonCard'
-import './styles.css'
+import './styles.scss'
 import { DataTable } from 'primereact/datatable'
 import { Column } from 'primereact/column'
 import timeSheetsData from '../../../constants/timeSheets.json'
