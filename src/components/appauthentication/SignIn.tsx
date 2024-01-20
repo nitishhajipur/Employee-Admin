@@ -4,6 +4,9 @@ import rightPortionImage from '../../assets/leftcoverpoto.webp'
 import './styles.scss'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
+import { FetchData } from '../../config/Fetch'
+import { toast } from 'react-toastify'
+import { error } from 'console'
 const SignIn = () => {
 
 
@@ -33,7 +36,22 @@ const SignIn = () => {
                             initialValues={{ userName: '', password: '' }}
                             validationSchema={schema}
                             onSubmit={(values: any) => {
-                                navigate('/home')
+                               
+                                FetchData({
+                                    url: 'http://localhost:3006/api/validateUser',
+                                    method: 'POST',
+                                    data: values
+                                }).then((response: any) => {
+                                    console.log('resppp', response.data)
+                                    if(response.data?.status === 'error'){
+                                        toast.error(response.data.message)
+                                    }else{
+                                        sessionStorage.setItem('id',response.data.id)
+                                        navigate('/home')
+                                    }
+                                }).catch((error: any) => {
+                                    toast.error(error.message)
+                                })
 
                             }}>
                             {({ errors, values, touched, setFieldValue }) => {
