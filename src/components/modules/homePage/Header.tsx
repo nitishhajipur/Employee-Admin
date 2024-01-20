@@ -26,6 +26,9 @@ function Header() {
         if(param == 'profile'){
             navigate('/menu/userProfile')
         }
+        if(param == 'logout'){
+            navigate('/')
+        }
     };
     return (
         <header>
