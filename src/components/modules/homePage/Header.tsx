@@ -12,12 +12,13 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router';
+import { InputSwitch } from 'primereact/inputswitch';
 
-function Header() {
+function Header(props:any) {
+    const {setTheme,theme}=props
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const navigate = useNavigate();
-
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -91,6 +92,22 @@ function Header() {
                             <Logout fontSize="small" />
                         </ListItemIcon>
                         Logout
+                    </MenuItem>
+                    <MenuItem>
+                    <ListItemIcon className='d-flex justify-content-between'>
+                        <label className='mx-2'>Light</label>
+                    <InputSwitch  checked={(theme === 'dark') ? true:false} onChange={(e) =>{
+                        console.log(e,"99values")
+                        if(e.value){
+                            setTheme('dark')
+                        }
+                        else{
+
+                            setTheme('light')}
+                        }
+                } />
+                <label className='mx-2'> Dark</label>
+                    </ListItemIcon>
                     </MenuItem>
                 </Menu>
             </div>

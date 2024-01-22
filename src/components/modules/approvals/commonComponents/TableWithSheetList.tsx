@@ -1,19 +1,19 @@
 import { Column } from 'primereact/column'
 import { DataTable } from 'primereact/datatable'
-import React from 'react'
+import React, { useState } from 'react'
 import { Employesicon } from '../../../../constants/ApprovalsTabConstants/employeicons'
 import '../Styles.scss'
 import CustomTooltip from '../../../../common/CustomTooltip'
 const SheetsDataList=(props:any)=>{
     const {data}=props
+
+    const [theme,setTheme]=useState("false") 
     const renderTableBody=(rowdata:any)=>{
         return(
-            <div className='d-flex cardContainer'>
+            <div className={`d-flex cardContainer`}>
                 <div className='userData'>
                     <p className='m-0'>{rowdata.userName}</p>
-                    <CustomTooltip title={"hii"} position={"right"}>
                         <Employesicon />
-                    </CustomTooltip>
                     <p className='m-0'> Employee Id </p>
                 </div>
                 <div className='sumbission'>

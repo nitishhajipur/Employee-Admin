@@ -1,3 +1,16 @@
+$department: '';
+$background:'';
+$primary:'';
+$secondary:white;
+@mixin background($background){
+    @if $background == 'dark'{
+
+        $primary:blue !global
+    }
+    @else{
+        $primary: green !global
+    }
+}
 .sheetDetailsContainer{
     // display: none;
     .p-datatable-wrapper{
@@ -18,12 +31,10 @@
                 tr{
                     td{
                         background-color: rgba(183,183,236,255);
-                        padding: 10px 0px ;
-                       
-                        
-                        
+                        padding: 10px 0px;
                         .cardContainer{
-                        background-color: rgba(218,218,246,255);
+                        @include background(dark);
+                        background: $primary;
                         border-radius: 25px;
                         max-width: 95%;
                         margin: auto;
