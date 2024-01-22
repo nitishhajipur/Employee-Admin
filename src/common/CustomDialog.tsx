@@ -106,7 +106,6 @@ export default function CustomDialog(props: any) {
 
         <DialogContent dividers>{props.children}</DialogContent>
         <DialogActions>
-          {console.log("58...", props.actionType)}
           {props.actionType === "Close" ? (
             <Button autoFocus onClick={handleClose}>
               Close

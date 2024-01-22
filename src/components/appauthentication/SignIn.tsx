@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 import { FetchData } from '../../config/Fetch'
 import { toast } from 'react-toastify'
 import { error } from 'console'
+import ForgotPassword from './ForgotPassWord'
 const SignIn = () => {
 
 
@@ -24,6 +25,7 @@ const SignIn = () => {
     return (
         <>
             <div className='sighnIn'>
+                
                 <div className='authenticationContainer d-flex col-6'>
                     <div className='col-6 imgcontainer'>
                         <img src={rightPortionImage} />
@@ -79,6 +81,9 @@ const SignIn = () => {
                                         <div>
                                             <button type='submit' className='login'> Sign In</button>
                                             <button type='button' onClick={sighnUp} className='sighnUp'> Sign Up</button>
+                                        </div>
+                                        <div>
+                                            <ForgotPassword/>
                                         </div>
 
                                     </Form>

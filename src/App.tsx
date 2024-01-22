@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { appTypes } from './reducer/types';
 import { ToastContainer } from 'react-toastify';
+import PageNotFound from './common/NoPageFound';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path={"/userProfile"} element={<UserProfile />}></Route>
           <Route path={"/Approvals"} element={<ApprovalsIndex/>}></Route>
         </Route>
+          <Route path={"*"} element={<PageNotFound/>}></Route>
       </Routes>
     </div>
   );
