@@ -15,16 +15,15 @@ const SignUp = (props: any) => {
         userName: Yup.string().required(" ! Enter user name"),
         password: Yup.string().required("Enter  password"),
         confirmPassword: Yup.string().required(" Enter confirm Password").oneOf([Yup.ref('password')], "! Passwords don't match"),
-        // confirmPassword: yup.string().oneOf([yup.ref('password'), null], "Passwords don't match").required('Confirm Password is required'),
 
 
     })
-    function toastAlert(props: any, callback: any) {
+    function toastAlert(props: any) {
         if (props.status == 'error') {
             toast.error(props.message)
         } else {
-            if (callback) callback()
             toast.success(props.message)
+            navigate("/")
         }
     }
     const handleSubmit = (values: any) => {
@@ -36,7 +35,7 @@ const SignUp = (props: any) => {
             data: values
         }).then((response: any) => {
             console.log('resppp', response.data)
-            toastAlert(response.data, navigate("/"))
+            toastAlert(response.data)
         }).catch((error: any) => {
             toast.success(error.message)
         })

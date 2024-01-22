@@ -1,3 +1,4 @@
+@import './globalVars.scss';
 .App {
   text-align: center;
 }
@@ -12,11 +13,19 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.App-container {
-  background-color: #f1f1f1;
-  color: black;
+.App-container-light {
+  // @include themeController('dark');
+  background-color: $primary-background-theme-light;
+  color:$primary-text-theme-color ;
   height: 100vh;
+  // --bs-gutter-x: 0px !important;
 
+}
+.App-container-dark{
+  @include themeController('dark');
+  background-color: $primary-background-theme-light;
+  color:$primary-text-theme-color ;
+  height: 100vh;
 }
 .nav-container{
   display: block;

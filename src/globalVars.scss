@@ -1,0 +1,9 @@
+$primary-background-theme-light:#f1f1f1;
+$primary-text-theme-color:black;
+// $secondary-background-theme-dark:rgba(18, 17, 17,0.4);
+@mixin themeController($theme){
+    @if $theme == 'dark'{
+        $primary-background-theme-light:rgba(18, 17, 17,0.7) !global;
+        $primary-text-theme-color:#f1f1f1 !global; 
+    }
+}

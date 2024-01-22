@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Outlet, useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import Header from '../modules/homePage/Header';
 const NavItems = () => {
     const location = useLocation();
+    const [theme,setTheme]=useState('light')
 
     const { pathname }: any = location;
     console.log(pathname, "8...")
     return (
-        <div className="row App-container">
+        <div className={`row gx-0  App-container-${theme}`}>
             <nav className="col-2">
                 <div className="nav-container">
                     <h4 className="mb-5 pt-3 ps-2"> Admin tool</h4>
@@ -27,7 +28,7 @@ const NavItems = () => {
                 </div>
             </nav>
             <div className="col-10 container-fluid p-2 body-container">
-                <Header />
+                <Header setTheme={setTheme} theme={theme}/>
                 <Outlet />
             </div>
         </div>
