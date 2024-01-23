@@ -12,6 +12,8 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { appTypes } from './reducer/types';
 import { ToastContainer } from 'react-toastify';
+import PageNotFound from './common/NoPageFound';
+import SelectedSheetData from './components/modules/approvals/commonComponents/SelectedSheetData';
 
 
 function App() {
@@ -27,7 +29,9 @@ function App() {
           <Route path={"/users"} element={<UserIndex />}></Route>
           <Route path={"/userProfile"} element={<UserProfile />}></Route>
           <Route path={"/Approvals"} element={<ApprovalsIndex/>}></Route>
+          <Route path={"/Approvals/:sheetId"} element={<SelectedSheetData/>}></Route>
         </Route>
+          <Route path={"*"} element={<PageNotFound/>}></Route>
       </Routes>
     </div>
   );

@@ -65,7 +65,7 @@ function UserPage() {
       <div className="">
         <div className="d-flex justify-content-end">
           <div>
-            <CommonSearchField placeholder={"Search users here..."} />
+            <CommonSearchField placeholder={"Search users here..."} onChange={(e:any)=>{}}/>
           </div>
           <div style={{ padding: "0px 6px", margin: "1rem" }}>
             <CreateUser setUserData={setUserData} />
@@ -76,7 +76,7 @@ function UserPage() {
           stripedRows
           emptyMessage="No users available to display."
           tableStyle={{ minWidth: '50rem' }}
-           paginator 
+           paginator ={(userData?.length >8 )?true:false}
            rows={8}
           // rowsPerPageOptions={[5, 10, 25, 50]} 
           scrollable scrollHeight="390px"

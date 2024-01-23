@@ -5,7 +5,7 @@ $secondary:white;
 @mixin background($background){
     @if $background == 'dark'{
 
-        $primary:blue !global
+        $primary:#e9ecef !global
     }
     @else{
         $primary: green !global
@@ -43,18 +43,17 @@ $secondary:white;
                         box-shadow: 3px 3px 1px grey;
                         justify-content: space-around;
                         .userData{
-                        text-align: center;
+                        min-width: 25%;
                         display: flex;
                         color: black;
                         align-items: center;
-                        justify-content: space-between;
+                        justify-content: space-evenly;
                         gap: 20px;
                         margin: 0px 0px 0px 5px;
                         font-weight: 600;
                         p{
                             font-size: 10px;
                             // width: fit-content;
-
                         }
                         svg{
                             // width: 100%;
@@ -72,6 +71,9 @@ $secondary:white;
                      .viewSheet{
                         display: flex;
                         align-items: center;
+                        cursor: pointer;
+                        color: skyblue;
+                        text-decoration: underline;
                         
                      }
 

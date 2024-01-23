@@ -73,4 +73,7 @@ h2{
     border: none;
     width: 80%;
     color: #424141;
+    &:focus{
+      outline: 0px !important;
+    }
   }

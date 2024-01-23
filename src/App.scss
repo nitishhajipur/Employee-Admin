@@ -17,7 +17,7 @@
   // @include themeController('dark');
   background-color: $primary-background-theme-light;
   color:$primary-text-theme-color ;
-  height: 100vh;
+  min-height: 100vh;
   // --bs-gutter-x: 0px !important;
 
 }
@@ -25,7 +25,7 @@
   @include themeController('dark');
   background-color: $primary-background-theme-light;
   color:$primary-text-theme-color ;
-  height: 100vh;
+  min-height: 100vh;
 }
 .nav-container{
   display: block;
