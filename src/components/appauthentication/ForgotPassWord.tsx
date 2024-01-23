@@ -14,6 +14,26 @@ const ForgotPassword=(props:any)=>{
         let errors:any={}
         if(!informData?.verfiyMailId  && values?.email ===''){
             errors.email="Required"
+            
+        }
+        else if(informData?.verfiyMailId && !informData?.verifyOtp){
+            if(values?.otp ===''){
+                errors.otp ="Required"
+            }
+            else if(values.otp?.length >6){
+                errors.otp = "Invalid Otp"
+            }
+        }
+        else if (informData?.verifyOtp){
+            if(values?.newpassword ===""){
+                errors.newpassword = "Required"
+            }
+            if(values?.confirmPassWord ===""){
+                errors.confirmPassWord="Required"
+            }
+            else if(values?.newpassword !== values?.confirmPassWord){
+                errors.confirmPassWord =" Confirm Password Must Match With Password"
+            }
         }
         return errors
 
@@ -104,6 +124,8 @@ const ForgotPassword=(props:any)=>{
                                     placeholder={"Enter New Password"}>
 
                                     </Field>
+                        <ErrorMessage name='newpassword' component={'div'} className='text-danger'/>
+
 
                                 </div>
                                 <div className=''>
@@ -115,6 +137,8 @@ const ForgotPassword=(props:any)=>{
                                     placeholder={"Confirm New Password"}>
 
                                     </Field>
+                                    <ErrorMessage name='confirmPassWord' component={'div'} className='text-danger'/>
+
 
                                 </div>
 
