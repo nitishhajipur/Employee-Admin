@@ -7,7 +7,7 @@ function CommonSearchField(props: any) {
         <React.Fragment>
             <div className='common-search'>
                 <span><SearchIcon /> | </span>
-                <input type="text" placeholder={props.placeholder} />
+                <input type="text" placeholder={props?.placeholder} value={props?.value} onChange={(e:any)=>{props?.onChange(e)}}/>
             </div>
         </React.Fragment>
     )

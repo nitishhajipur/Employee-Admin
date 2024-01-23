@@ -7,7 +7,6 @@ const NavItems = () => {
     const [theme,setTheme]=useState('light')
 
     const { pathname }: any = location;
-    console.log(pathname, "8...")
     return (
         <div className={`row gx-0  App-container-${theme}`}>
             <nav className="col-2">
@@ -22,7 +21,7 @@ const NavItems = () => {
                     <div className={pathname == '/userProfile' ? 'selected-nav' : 'nav-item'}>
                         <NavLink to="/userProfile" className='nav-link'>User profile</NavLink>
                     </div>
-                    <div className={pathname == '/Approvals' ? 'selected-nav' : 'nav-item'}>
+                    <div className={pathname.split("/").includes('Approvals') ? 'selected-nav' : 'nav-item'}>
                         <NavLink to="/Approvals" className='nav-link'> Approvals</NavLink>
                     </div>
                 </div>

@@ -34,8 +34,6 @@ const  TabPanelsComponent=(props:any)=> {
                 <TabPanel value={tabmenu.id} key={index}>
                     {
                         <React.Suspense>
-
-
                             <tabmenu.component/>
                         </React.Suspense>
                     }
