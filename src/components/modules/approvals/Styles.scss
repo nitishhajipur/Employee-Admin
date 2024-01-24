@@ -16,6 +16,7 @@ $secondary:white;
     .p-datatable-wrapper{
         background: black;
         table{
+            
             thead{
                 tr{
                     th{
@@ -30,6 +31,9 @@ $secondary:white;
             tbody{
                 tr{
                     td{
+                        border-color: inherit;
+                        border-style: solid;
+                        border-width: 1px;
                         background-color: rgba(183,183,236,255);
                         padding: 10px 0px;
                         .cardContainer{
@@ -85,4 +89,38 @@ $secondary:white;
             }
         }
     }
+}
+.sheetDetailing{
+    .backToDashBoard{
+        span{
+            cursor: pointer;
+            font-size: 14px;
+        }
+    }
+    .detailsSheet{
+        background-color: rgba(155,194,224,255);
+        padding: 5px;
+        border-radius: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+        .SheetHeader{
+            font-size: 18px;
+            width: 90%;
+            margin: 0px;
+        }
+        .viewComentsIcon{
+            width: 10%;
+            cursor: pointer;
+            display: flex;
+            font-size: 24px;
+            justify-content: center;
+            &:hover{
+                font-size: 30px;
+                color: green;
+            }
+
+        }
+    }
+
 }
