@@ -1,5 +1,5 @@
 export const appTypes=
 {
-TestBoolean:"TestBoolean",
 ALL_USER_DATA:"ALL_USER_DATA",
+CURRENT_SHEET_DETAILS:"CURRENT_SHEET_DETAILS"
 }
