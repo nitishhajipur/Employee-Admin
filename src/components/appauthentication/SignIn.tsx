@@ -40,7 +40,7 @@ const SignIn = () => {
                             onSubmit={(values: any) => {
                                
                                 FetchData({
-                                    url: 'http://localhost:3006/api/validateUser',
+                                    url: 'http://localhost:3006/api/validateAdmin',
                                     method: 'POST',
                                     data: values
                                 }).then((response: any) => {
