@@ -1,240 +1,283 @@
 [
-    {
-      "id":"10",
-      "userName": "AkshayKumar",
-      "department": "Sales & It",
-      "timeSheetDuration": "4/1/24 to 8/1/24",
-      "status": "submitted",
-      "isApproved": false,
-      "dateOfSubmisson": "7/1/24",
-      "sheetData":{"timeSheetDetails":[{}],"comments":[{}]}
-    },
-    {
-        "id":"25",
-      "userName": "NaveenKumar",
-      "department": "Sales & It",
-      "timeSheetDuration": "10/1/24 to 15/1/24",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "NaveenKumar",
-          "comment": "Its being Revised"
-        }
+  {
+    "id":"10",
+    "userName": "AkshayKumar",
+    "department": "Sales & It",
+    "timeSheetDuration": "4/1/24 to 8/1/24",
+    "status": "submitted",
+    "isApproved": false,
+    "dateOfSubmisson": "7/1/24",
+    "sheetData":{
+      "timeSheetDetails":
+      [
+        {"day":"4/5/23",
+        "logInTime":"9:00 am",
+        "logOutTime":"5:30 pm",
+        "breakTime":"1:00 hr",
+        "effectiveHours": "6:30 hr"
+      },
+        {"day":"5/5/23",
+        "logInTime":"9:00 am",
+        "logOutTime":"6:30 pm",
+        "breakTime":"1:00 hr",
+        "effectiveHours":"7:30 hr"
+      },
+          {"day":"6/5/23",
+        "logInTime":"9:00 am",
+        "logOutTime":"6:00 pm",
+        "breakTime":"00 hr",
+        "effectiveHours":"8:00 hr"
+      },
+       {"day":"7/5/23",
+        "logInTime":"9:00 am",
+        "logOutTime":"5:00 pm",
+        "breakTime":"00 hr",
+        "effectiveHours":"7:00 hr"
+      },
+       {"day":"8/5/23",
+        "logInTime":"9:00 am",
+        "logOutTime":"5:00 pm",
+        "breakTime":"00 hr",
+        "effectiveHours":"7:00 hr"
+      }
       ],
-      "dateOfSubmisson": "15/1/24"
-    },
-    {
-        "id":"9",
-      "userName": "ShyamSundhar",
-      "department": "Hr Department",
-      "timeSheetDuration": "21/12/23 to 26/12/23",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "ShyamSundhar",
-          "comment": "Its The Correct Once Please Consider it"
-        }
-      ],
-      "dateOfSubmisson": "1/12/24"
-    },
-    {
-        "id":"25",
-      "userName": "NaveenKumar",
-      "department": "Sales & It",
-      "timeSheetDuration": "10/1/24 to 15/1/24",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "NaveenKumar",
-          "comment": "Its being Revised"
-        }
-      ],
-      "dateOfSubmisson": "15/1/24"
-    },
-    {
-        "id":"9",
-      "userName": "ShyamSundhar",
-      "department": "Hr Department",
-      "timeSheetDuration": "21/12/23 to 26/12/23",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "ShyamSundhar",
-          "comment": "Its The Correct Once Please Consider it"
-        }
-      ],
-      "dateOfSubmisson": "1/12/24"
-    },
-    {
-        "id":"25",
-      "userName": "NaveenKumar",
-      "department": "Sales & It",
-      "timeSheetDuration": "10/1/24 to 15/1/24",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "NaveenKumar",
-          "comment": "Its being Revised"
-        }
-      ],
-      "dateOfSubmisson": "15/1/24"
-    },
-    {
-        "id":"9",
-      "userName": "ShyamSundhar",
-      "department": "Hr Department",
-      "timeSheetDuration": "21/12/23 to 26/12/23",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "ShyamSundhar",
-          "comment": "Its The Correct Once Please Consider it"
-        }
-      ],
-      "dateOfSubmisson": "1/12/24"
-    },
-    {
-        "id":"25",
-      "userName": "NaveenKumar",
-      "department": "Sales & It",
-      "timeSheetDuration": "10/1/24 to 15/1/24",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "NaveenKumar",
-          "comment": "Its being Revised"
-        }
-      ],
-      "dateOfSubmisson": "15/1/24"
-    },
-    {
-        "id":"9",
-      "userName": "ShyamSundhar",
-      "department": "Hr Department",
-      "timeSheetDuration": "21/12/23 to 26/12/23",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "ShyamSundhar",
-          "comment": "Its The Correct Once Please Consider it"
-        }
-      ],
-      "dateOfSubmisson": "1/12/24"
-    },
-    {
-        "id":"25",
-      "userName": "NaveenKumar",
-      "department": "Sales & It",
-      "timeSheetDuration": "10/1/24 to 15/1/24",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "NaveenKumar",
-          "comment": "Its being Revised"
-        }
-      ],
-      "dateOfSubmisson": "15/1/24"
-    },
-    {
-        "id":"9",
-      "userName": "ShyamSundhar",
-      "department": "Hr Department",
-      "timeSheetDuration": "21/12/23 to 26/12/23",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "ShyamSundhar",
-          "comment": "Its The Correct Once Please Consider it"
-        }
-      ],
-      "dateOfSubmisson": "1/12/24"
-    },
-    {
-        "id":"25",
-      "userName": "NaveenKumar",
-      "department": "Sales & It",
-      "timeSheetDuration": "10/1/24 to 15/1/24",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "NaveenKumar",
-          "comment": "Its being Revised"
-        }
-      ],
-      "dateOfSubmisson": "15/1/24"
-    },
-    {
-        "id":"9",
-      "userName": "ShyamSundhar",
-      "department": "Hr Department",
-      "timeSheetDuration": "21/12/23 to 26/12/23",
-      "status": "submitted",
-      "isApproved": false,
-      "comments": [
-        {
-          "user": "admin",
-          "comment": "Please check the in time of monday"
-        },
-        {
-          "user": "ShyamSundhar",
-          "comment": "Its The Correct Once Please Consider it"
-        }
-      ],
-      "dateOfSubmisson": "1/12/24"
+      "comments":[ {
+        "userId": 1,
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "userId": 2,
+        "comment": "Its being Revised"
+      }]
+      
     }
-  ]
+  },
+  {
+      "id":"25",
+    "userName": "NaveenKumar",
+    "department": "Sales & It",
+    "timeSheetDuration": "10/1/24 to 15/1/24",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "userId": 1,
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "userId": 2,
+        "comment": "Its being Revised"
+      }
+    ],
+    "dateOfSubmisson": "15/1/24"
+  },
+  {
+      "id":"9",
+    "userName": "ShyamSundhar",
+    "department": "Hr Department",
+    "timeSheetDuration": "21/12/23 to 26/12/23",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "ShyamSundhar",
+        "comment": "Its The Correct Once Please Consider it"
+      }
+    ],
+    "dateOfSubmisson": "1/12/24"
+  },
+  {
+      "id":"25",
+    "userName": "NaveenKumar",
+    "department": "Sales & It",
+    "timeSheetDuration": "10/1/24 to 15/1/24",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "NaveenKumar",
+        "comment": "Its being Revised"
+      }
+    ],
+    "dateOfSubmisson": "15/1/24"
+  },
+  {
+      "id":"9",
+    "userName": "ShyamSundhar",
+    "department": "Hr Department",
+    "timeSheetDuration": "21/12/23 to 26/12/23",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "ShyamSundhar",
+        "comment": "Its The Correct Once Please Consider it"
+      }
+    ],
+    "dateOfSubmisson": "1/12/24"
+  },
+  {
+      "id":"25",
+    "userName": "NaveenKumar",
+    "department": "Sales & It",
+    "timeSheetDuration": "10/1/24 to 15/1/24",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "NaveenKumar",
+        "comment": "Its being Revised"
+      }
+    ],
+    "dateOfSubmisson": "15/1/24"
+  },
+  {
+      "id":"9",
+    "userName": "ShyamSundhar",
+    "department": "Hr Department",
+    "timeSheetDuration": "21/12/23 to 26/12/23",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "ShyamSundhar",
+        "comment": "Its The Correct Once Please Consider it"
+      }
+    ],
+    "dateOfSubmisson": "1/12/24"
+  },
+  {
+      "id":"25",
+    "userName": "NaveenKumar",
+    "department": "Sales & It",
+    "timeSheetDuration": "10/1/24 to 15/1/24",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "NaveenKumar",
+        "comment": "Its being Revised"
+      }
+    ],
+    "dateOfSubmisson": "15/1/24"
+  },
+  {
+      "id":"9",
+    "userName": "ShyamSundhar",
+    "department": "Hr Department",
+    "timeSheetDuration": "21/12/23 to 26/12/23",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "ShyamSundhar",
+        "comment": "Its The Correct Once Please Consider it"
+      }
+    ],
+    "dateOfSubmisson": "1/12/24"
+  },
+  {
+      "id":"25",
+    "userName": "NaveenKumar",
+    "department": "Sales & It",
+    "timeSheetDuration": "10/1/24 to 15/1/24",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "NaveenKumar",
+        "comment": "Its being Revised"
+      }
+    ],
+    "dateOfSubmisson": "15/1/24"
+  },
+  {
+      "id":"9",
+    "userName": "ShyamSundhar",
+    "department": "Hr Department",
+    "timeSheetDuration": "21/12/23 to 26/12/23",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "ShyamSundhar",
+        "comment": "Its The Correct Once Please Consider it"
+      }
+    ],
+    "dateOfSubmisson": "1/12/24"
+  },
+  {
+      "id":"25",
+    "userName": "NaveenKumar",
+    "department": "Sales & It",
+    "timeSheetDuration": "10/1/24 to 15/1/24",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "NaveenKumar",
+        "comment": "Its being Revised"
+      }
+    ],
+    "dateOfSubmisson": "15/1/24"
+  },
+  {
+      "id":"9",
+    "userName": "ShyamSundhar",
+    "department": "Hr Department",
+    "timeSheetDuration": "21/12/23 to 26/12/23",
+    "status": "submitted",
+    "isApproved": false,
+    "comments": [
+      {
+        "user": "admin",
+        "comment": "Please check the in time of monday"
+      },
+      {
+        "user": "ShyamSundhar",
+        "comment": "Its The Correct Once Please Consider it"
+      }
+    ],
+    "dateOfSubmisson": "1/12/24"
+  }
+]

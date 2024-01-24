@@ -109,7 +109,11 @@ $secondary:white;
             width: 90%;
             margin: 0px;
         }
+        .viewComentsIcon.active{
+            color: black;
+        }
         .viewComentsIcon{
+            
             width: 10%;
             cursor: pointer;
             display: flex;
