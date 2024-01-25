@@ -41,9 +41,8 @@ const SignIn = () => {
                             initialValues={{ userName: '', password: '' }}
                             validationSchema={schema}
                             onSubmit={(values: any) => {
-                                dispatch({type:appTypes.IS_AUTHENTICATED,payload:true})
                                 FetchData({
-                                    url: 'http://localhost:3006/api/validateUser',
+                                    url: 'http://localhost:3006/api/validateAdmin',
                                     method: 'POST',
                                     data: values
                                 }).then((response: any) => {
@@ -52,7 +51,8 @@ const SignIn = () => {
                                         toast.error(response.data.message)
                                     }else{
                                         sessionStorage.setItem('id',response.data.id)
-                                        navigate('/home')
+                                        dispatch({type:appTypes.IS_AUTHENTICATED,payload:true})
+                                        navigate('/')
                                     }
                                 }).catch((error: any) => {
                                     toast.error(error.message)
