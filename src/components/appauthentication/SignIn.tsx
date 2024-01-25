@@ -8,7 +8,10 @@ import { FetchData } from '../../config/Fetch'
 import { toast } from 'react-toastify'
 import { error } from 'console'
 import ForgotPassword from './ForgotPassWord'
+import { useDispatch } from 'react-redux'
+import { appTypes } from '../../reducer/types'
 const SignIn = () => {
+    const dispatch=useDispatch()
 
 
 
@@ -38,7 +41,7 @@ const SignIn = () => {
                             initialValues={{ userName: '', password: '' }}
                             validationSchema={schema}
                             onSubmit={(values: any) => {
-                               
+                                dispatch({type:appTypes.IS_AUTHENTICATED,payload:true})
                                 FetchData({
                                     url: 'http://localhost:3006/api/validateUser',
                                     method: 'POST',

@@ -21,7 +21,7 @@ import PrivateRoute from './routes/PrivateRoutes';
 
 
 function App() {
-  const [isAuthenticated,setIsAuthenticated]=useState<any>(false)
+  const {isAuthenticated}=useSelector((state:any)=>state.application)
   
   return (
     <div className="App">

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Outlet, useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import Header from '../modules/homePage/Header';
+import NavBarRoutes from './Index';
 const NavItems = () => {
     const location = useLocation();
     const [theme,setTheme]=useState('light')
@@ -12,8 +13,8 @@ const NavItems = () => {
             <nav className="col-2">
                 <div className="nav-container">
                     <h4 className="mb-5 pt-3 ps-2"> Admin tool</h4>
-                    <div className={pathname == '/home' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/home" className='nav-link'>Home</NavLink>
+                    <div className={pathname == '/' ? 'selected-nav' : 'nav-item'}>
+                        <NavLink to="/" className='nav-link'>Home</NavLink>
                     </div>
                     <div className={pathname == '/users' ? 'selected-nav' : 'nav-item'}>
                         <NavLink to="/users" className='nav-link'>User Management</NavLink>
@@ -28,6 +29,7 @@ const NavItems = () => {
             </nav>
             <div className="col-10 container-fluid p-2 body-container">
                 <Header setTheme={setTheme} theme={theme}/>
+                <NavBarRoutes/>
                 <Outlet />
             </div>
         </div>
