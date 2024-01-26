@@ -32,7 +32,7 @@
                 input.form-control {
                     background-color: rgba(48,94,135,0.9) !important;
                     color: black ;
-                    border-radius: 5px;
+                    border-radius: 15px;
                     font-weight: 600;
                     
                 }
@@ -58,6 +58,7 @@
                 border-radius: 1rem;
                 :hover{
                     box-shadow: 1px 1px 1px grey;
+                    // color: black !important;
                 }
             }
             .singhUp{
