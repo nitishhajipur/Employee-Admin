@@ -60,7 +60,7 @@ const ForgotPassword=(props:any)=>{
     }
     return(
         <>
-        <p className='text-primary' onClick={(e:any)=>{
+        <p className='forgotPassword' onClick={(e:any)=>{
             onOpen()
             }}>Forgot Password ?.</p>
         <CustomDialog

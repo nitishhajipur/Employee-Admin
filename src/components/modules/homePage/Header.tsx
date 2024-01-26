@@ -13,6 +13,9 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router';
 import { InputSwitch } from 'primereact/inputswitch';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { appTypes } from '../../../reducer/types';
 
 function Header(props:any) {
     const {setTheme,theme}=props
@@ -22,6 +25,7 @@ function Header(props:any) {
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
+    const dispatch=useDispatch()
     const handleClose = (param: any) => {
         setAnchorEl(null);
         if(param == 'profile'){
@@ -29,10 +33,12 @@ function Header(props:any) {
         }
         if(param == 'logout'){
             navigate('/')
+            dispatch({type:appTypes.IS_AUTHENTICATED,payload:false})
         }
     };
     return (
         <header>
+           
             
             <div className='d-flex justify-content-end me-5'>
                 <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>

@@ -8,7 +8,10 @@ import { FetchData } from '../../config/Fetch'
 import { toast } from 'react-toastify'
 import { error } from 'console'
 import ForgotPassword from './ForgotPassWord'
+import { useDispatch } from 'react-redux'
+import { appTypes } from '../../reducer/types'
 const SignIn = () => {
+    const dispatch=useDispatch()
 
 
 
@@ -25,20 +28,16 @@ const SignIn = () => {
     return (
         <>
             <div className='sighnIn'>
-                
-                <div className='authenticationContainer d-flex col-6'>
-                    <div className='col-6 imgcontainer'>
-                        <img src={rightPortionImage} />
+              
+                    <div  className='authenticationContainer col-lg-4 col-md-6 col-sm-6 col-xs-12 '>
 
-                    </div>
-                    <div className='col-6 credentailsContainer'>
+                   
                         <p className='primaryheader'>Welcome ! Lets get started</p>
 
                         <Formik
                             initialValues={{ userName: '', password: '' }}
                             validationSchema={schema}
                             onSubmit={(values: any) => {
-                               
                                 FetchData({
                                     url: 'http://localhost:3006/api/validateAdmin',
                                     method: 'POST',
@@ -49,7 +48,8 @@ const SignIn = () => {
                                         toast.error(response.data.message)
                                     }else{
                                         sessionStorage.setItem('id',response.data.id)
-                                        navigate('/home')
+                                        dispatch({type:appTypes.IS_AUTHENTICATED,payload:true})
+                                        navigate('/')
                                     }
                                 }).catch((error: any) => {
                                     toast.error(error.message)
@@ -80,7 +80,8 @@ const SignIn = () => {
                                         </div>
                                         <div>
                                             <button type='submit' className='login'> Sign In</button>
-                                            <button type='button' onClick={sighnUp} className='sighnUp'> Sign Up</button>
+                                            <p className='singhUp'> Don't Have Account ? <span onClick={sighnUp}> Register Now </span></p>
+                                            {/* <button type='button' onClick={sighnUp} className='sighnUp'> Sign Up</button> */}
                                         </div>
                                         <div>
                                             <ForgotPassword/>
@@ -90,12 +91,9 @@ const SignIn = () => {
                                 )
                             }}
                         </Formik>
+                        </div>
 
                         {/* <input type='text' className='form-control' placeholder='username'></input> */}
-
-                    </div>
-
-                </div>
 
             </div>
         </>

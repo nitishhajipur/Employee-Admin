@@ -26,7 +26,8 @@ const SignUp = (props: any) => {
             navigate("/")
         }
     }
-    const handleSubmit = (values: any) => {
+                            
+        const handleSubmit = (values: any) => {
         delete values.confirmPassword
         console.log('20...', values)
         FetchData({
@@ -52,7 +53,6 @@ const SignUp = (props: any) => {
                         initialValues={{ firstName: '', lastName: '', contactNo: '', email: "", userName: "", password: "", confirmPassword: '' }}
                         onSubmit={(values: any, { resetForm }) => {
                             handleSubmit(values)
-                            resetForm();
                         }}
                         enableReinitialize
                     >
