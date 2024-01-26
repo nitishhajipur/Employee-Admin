@@ -28,13 +28,10 @@ const SignIn = () => {
     return (
         <>
             <div className='sighnIn'>
-                
-                <div className='authenticationContainer d-flex col-6'>
-                    <div className='col-6 imgcontainer'>
-                        <img src={rightPortionImage} />
+              
+                    <div  className='authenticationContainer col-lg-4 col-md-6 col-sm-6 col-xs-12 '>
 
-                    </div>
-                    <div className='col-6 credentailsContainer'>
+                   
                         <p className='primaryheader'>Welcome ! Lets get started</p>
 
                         <Formik
@@ -83,7 +80,8 @@ const SignIn = () => {
                                         </div>
                                         <div>
                                             <button type='submit' className='login'> Sign In</button>
-                                            <button type='button' onClick={sighnUp} className='sighnUp'> Sign Up</button>
+                                            <p className='singhUp'> Don't Have Account ? <span onClick={sighnUp}> Register Now </span></p>
+                                            {/* <button type='button' onClick={sighnUp} className='sighnUp'> Sign Up</button> */}
                                         </div>
                                         <div>
                                             <ForgotPassword/>
@@ -93,12 +91,9 @@ const SignIn = () => {
                                 )
                             }}
                         </Formik>
+                        </div>
 
                         {/* <input type='text' className='form-control' placeholder='username'></input> */}
-
-                    </div>
-
-                </div>
 
             </div>
         </>
