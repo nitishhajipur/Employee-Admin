@@ -3,10 +3,9 @@ import CustomDialog from "../../../common/CustomDialog";
 import '../../../common/styles.scss';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import ReactSelect from "../../../common/ReactSelect";
-import axios from 'axios';
 import { validateUserSchema } from "../../../constants/userPageContants/validationuser";
 import { UserInfo } from "../../../constants/userPageContants/userDataType";
-import { Departments, shiftopt } from "../../../constants/userPageContants/staticOptions";
+import { Departments, attendanceActionOpt, shiftopt } from "../../../constants/userPageContants/staticOptions";
 import EditIcon from "@mui/icons-material/Edit";
 import { FetchData } from "../../../config/Fetch";
 import { CreateNewUser, GetAllUserData, updateUser } from "./actions";
@@ -16,10 +15,10 @@ import { toast } from "react-toastify";
 
 
 function CreateUser(props: any) {
-  const { rowData,setUserData } = props
+  const { rowData, setUserData } = props
   const [error, setError] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-  const dispatch=useDispatch()
+  const dispatch = useDispatch()
 
   const onClose = () => {
     setOpen(false);
@@ -30,18 +29,20 @@ function CreateUser(props: any) {
 
   const submitHandler = (values: any) => {
     console.log("17...", values);
-    const data={...values,
-      department:values.department.value,
-      shift:values.shift.value
+    const data = {
+      ...values,
+      department: values.department.value,
+      shift: values.shift.value,
+      attendanceAction: values.attendanceAction.value
     }
-    if(!rowData?._id){
+    if (!rowData?._id) {
 
-      dispatch(CreateNewUser(data,(response:any)=>{
-        if(response.status === 'success'){
+      dispatch(CreateNewUser(data, (response: any) => {
+        if (response.status === 'success') {
           toast.success(response.message)
 
         }
-        else{
+        else {
           toast.error(response.message)
         }
         dispatch(GetAllUserData((data: any) => {
@@ -49,16 +50,16 @@ function CreateUser(props: any) {
           setUserData(data)
           onClose();
         }))
-        
+
       }))
     }
-    else{
-      dispatch(updateUser(data,(response:any)=>{
-        if(response.status ==='success'){
+    else {
+      dispatch(updateUser(data, (response: any) => {
+        if (response.status === 'success') {
           toast.success(response.message)
 
         }
-        else{
+        else {
           toast.error(response.message)
         }
         dispatch(GetAllUserData((userData: any) => {
@@ -77,23 +78,23 @@ function CreateUser(props: any) {
 
   return (
     <>
-    
-    {rowData?._id?
-     <span onClick={openDialog}><CustomTooltip title={"Edit"} position={'top'}>
-      <EditIcon />
-      </CustomTooltip>
-      </span>:
-     <button type="button" className="btn btn-primary " onClick={openDialog}>Create User</button>
-    }
+
+      {rowData?._id ?
+        <span onClick={openDialog}><CustomTooltip title={"Edit"} position={'top'}>
+          <EditIcon />
+        </CustomTooltip>
+        </span> :
+        <button type="button" className="btn btn-primary " onClick={openDialog}>Create User</button>
+      }
       <CustomDialog
-        title={(rowData?._id)?"Update User":"Create User"}
+        title={(rowData?._id) ? "Update User" : "Create User"}
         open={open}
         onClose={onClose}
-        actionType={(rowData?._id)?"Update":"Submit"}
+        actionType={(rowData?._id) ? "Update" : "Submit"}
         maxWidth="md"
         fullWidth={true}
         form={"createUser"}
-        // onSubmitHandler={() => { }}
+      // onSubmitHandler={() => { }}
       >
         <div>
           {error && (
@@ -102,12 +103,12 @@ function CreateUser(props: any) {
             </p>
           )}
           <Formik
-            initialValues={(rowData?._id)?rowData:UserInfo}
+            initialValues={(rowData?._id) ? rowData : UserInfo}
             validationSchema={validateUserSchema}
             onSubmit={(values: any) => submitHandler(values)}
           >
             {({ values, errors, touched, setFieldValue }) => {
-              console.log('113....', values)
+              console.log('113....', values, rowData)
               return (
                 <Form id="createUser">
                   <div className="row ">
@@ -290,6 +291,21 @@ function CreateUser(props: any) {
                         // className={((touched?.role && errors.role) ? "selecterror" : "")}
                         />
                         <ErrorMessage name="shift" component="div" className="text-danger" />
+                      </div>
+                    </div>
+                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                      <label htmlFor="attendaceAction">Attendace action:<span className="text-danger">*</span></label>
+                      <div>
+                        <ReactSelect
+                          name={"attendaceAction"}
+                          id={"attendaceAction"}
+                          placeHolder={"Select Attendance action"}
+                          options={attendanceActionOpt}
+                          value={values?.attendanceAction}
+                          onChange={(e: any) => setFieldValue("attendanceAction", e)}
+                        // className={((touched?.role && errors.role) ? "selecterror" : "")}
+                        />
+                        <ErrorMessage name="attendanceAction" component="div" className="text-danger" />
                       </div>
                     </div>
                   </div>

@@ -10,3 +10,7 @@ export const shiftopt=[
     {label:"Evening",value:"2pm to 11pm"},
     {label:'Night Shift',value:'7pm to 4am'}
 ]
+export const attendanceActionOpt=[
+    {label:'Web clock-In/Out',value:"webClockIn"},
+    {label:"Timesheet",value:"timesheet"},
+]
