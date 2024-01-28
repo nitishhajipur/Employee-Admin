@@ -70,12 +70,13 @@ const SignIn = () => {
                                                 name="userName"
                                                 placeholder='user name'
                                                 className="form-control"
+                                                Required
                                             />
                                             {errors?.userName && touched?.userName ? <div className='text-danger'> <ErrorMessage name='userName' /></div> : ""}
                                         </div>
                                         <div className='field'>
                                             <label>Password:</label>
-                                            <Field type='password' className='form-control' name='password' placeholder='password' value={values.password} />
+                                            <Field type='password' Required className='form-control' name='password' placeholder='password' value={values.password} />
                                             {errors?.password && touched?.password ? <div className='text-danger'><ErrorMessage name='password' /></div> : ""}
                                         </div>
                                         <div>
@@ -84,7 +85,8 @@ const SignIn = () => {
                                             {/* <button type='button' onClick={sighnUp} className='sighnUp'> Sign Up</button> */}
                                         </div>
                                         <div>
-                                            <ForgotPassword/>
+                                            {/* <ForgotPassword/> */}
+                                            <p className='forgotPassword' onClick={(e:any)=>{navigate('/forgotPassword')    }}>Forgot Password ?.</p>
                                         </div>
 
                                     </Form>

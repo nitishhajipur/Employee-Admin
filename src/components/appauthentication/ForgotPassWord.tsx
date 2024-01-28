@@ -60,18 +60,6 @@ const ForgotPassword=(props:any)=>{
     }
     return(
         <>
-        <p className='forgotPassword' onClick={(e:any)=>{
-            onOpen()
-            }}>Forgot Password ?.</p>
-        <CustomDialog
-        form={'forgotPassword'}
-        open={open}
-        maxWidth={"sm"}
-        fullWidth={true}
-        title={"Forgot Password"}
-        onClose={onClose}
-        actionType={'submit'}
-        >
             <Formik
             initialValues={{email:"",otp:'',newpassword:'',confirmPassWord:''}}
             onSubmit={(values:any)=>{
@@ -81,8 +69,10 @@ const ForgotPassword=(props:any)=>{
             >
 
                 {({errors,values})=>(
+                    <div className='forgotGotContainer'>
+
                     
-                    <Form id='forgotPassword'>
+                    <Form id='forgotPasswordform'>
 
                     { !informData?.verfiyMailId &&
                     <div className='fieldContainer'>
@@ -144,13 +134,15 @@ const ForgotPassword=(props:any)=>{
 
                             </div> 
                         }
+                        <button type='submit'> submit</button>
                 </Form>
+                </div>
+
                 )}
 
             </Formik>
            
 
-        </CustomDialog>
             </>
 
     )

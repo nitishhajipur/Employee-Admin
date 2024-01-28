@@ -1,3 +1,4 @@
+import { toast } from "react-toastify"
 import { FetchData } from "../../../config/Fetch"
 import { Departments } from "../../../constants/userPageContants/staticOptions"
 import { shiftopt } from "../../../constants/userPageContants/staticOptions"
@@ -9,7 +10,9 @@ export const CreateNewUser:any=(props:any,callback:any)=>{
             data:props
           }).then((response:any)=>{
             callback(response.data)
-          }).catch((error:any)=>{})
+          }).catch((error:any)=>{
+            toast.error(error.message)
+          })
 
     })
 
@@ -30,6 +33,7 @@ export const GetAllUserData:any=(callback:any)=>{
             callback(response.data)
         }).catch((error:any)=>{
             console.log(error)
+            toast.error(error.message)
         })
 
     })
@@ -47,6 +51,7 @@ export const DeleteUser:any=(props:any,callback:any)=>{
             callback(response.data)
         }).catch((error:any)=>{
             console.log(error)
+            toast.error(error.message)
         })
 
     })
@@ -60,7 +65,9 @@ export const updateUser:any=(props:any,callback:any)=>{
             data:props
           }).then((response:any)=>{
             callback(response.data)
-          }).catch((error:any)=>{})
+          }).catch((error:any)=>{
+            toast.error(error.message)
+          })
 
     })
 

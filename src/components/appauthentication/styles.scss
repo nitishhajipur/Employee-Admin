@@ -171,3 +171,21 @@
 .submission button:hover{
     box-shadow: 2px 2px green;
 }
+.forgotGotContainer{
+    
+    height: 100vh;
+    display: flex;
+    background: #0178ec;
+    justify-content: center;
+    align-items: center;
+    #forgotPasswordform{
+        width: 50%;
+    padding: 20px;
+    background: white;
+
+
+    }
+    
+
+
+}

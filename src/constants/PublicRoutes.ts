@@ -14,6 +14,12 @@ export const PublicRoutes=[
         to:'/signUp'
     },
     {
+        element:"/forgotPassword",
+        pathName:'/forgotPassword',
+        component:lazy(()=>import('../components/appauthentication/ForgotPassWord')),
+        to:'/forgotPassword'
+    },
+    {
         element:"*",
         pathName:'*',
         component:lazy(()=>import('../common/NoPageFound')),
