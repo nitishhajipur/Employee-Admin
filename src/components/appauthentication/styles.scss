@@ -1,22 +1,18 @@
-// sighn in styles 
+// // sighn in styles 
 .sighnIn{
-    height: 100vh;
-    background: url('../../assets/background1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    .authenticationContainer{
-        // max-width:50%;
-        // width: 30%;
-        color: black;
-        padding: 30px;
-        margin: auto;
-        background-image: url("../../assets/sighnInImage.webp");
-        background-repeat:no-repeat;
-        background-size:cover;
-        border-radius: 1.5rem;
+    height: 95vh;
+    margin:1rem;
+    
+    .loginleftContainer{
+        height: 100%;
+        background-color: rgba(57,112,145,0.75);
+        object-fit: contain;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        justify-content: center;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
         .primaryheader{
             border-radius: 10px;
             font-size: 18px;
@@ -27,18 +23,27 @@
             text-emphasis:initial;
 
         }
-        .signInForm{
-            .field{
-                input.form-control {
-                    background-color: rgba(48,94,135,0.9) !important;
-                    color: black ;
-                    border-radius: 15px;
-                    font-weight: 600;
-                    
-                }
-                ::placeholder{
-                    color: black ;
-                }
+        img{
+            width: 50%;
+            
+        }
+        
+    }
+    .authenticationContainer{
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        background-color:rgba(43,53,62,1);
+        color: white;
+         padding: 30px 10px 0px 10px;
+          display: flex;
+        align-items: center;
+        justify-content: center;
+        .contentContainer{
+            background-color: #344c4e;
+            border-radius: 20px;
+            padding: 4rem;
+            box-shadow: 5px 5px rgba(57,112,145,0.9) inset ;
+            .signInForm{
                 label{
                     width: 100%;
                     text-align: start;
@@ -46,53 +51,132 @@
                     font-weight: 600;
                     margin-bottom: 10px;
                 }
-            }
-            .login{
-                background: rgba(65,75,47,0.75);
-                padding:0.5rem;
-                color: white;
-                width: 100%;
-                font-size: 12px;
-                font-weight: 500;
-                margin: 10px 0px ;
-                border-radius: 1rem;
-                :hover{
-                    box-shadow: 1px 1px 1px grey;
-                    // color: black !important;
-                }
-            }
-            .singhUp{
-                color:aliceblue;
-                font-size: 14px;
-                font-weight: 400;
-                margin: 0px;
-                span{
-                    color: aliceblue;
-                    font-size: 16px;
-                    font-weight: 600;
-                    cursor: pointer;
-
-                    text-decoration: underline;
-
-                }
-            }
-            .forgotPassword{
-                color: aliceblue;
-                margin: 0px;
-                cursor: pointer;
-                :hover{
-                    text-decoration: underline;
-                    text-decoration-color: aliceblue;
-                }
-
-
-            }
-
-            
-        }
+                .login{
+                                    background: rgba(65,75,47,0.75);
+                                    padding:0.5rem;
+                                    color: white;
+                                    width: 100%;
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    margin: 10px 0px ;
+                                    border-radius: 1rem;
+                                    :hover{
+                                        box-shadow: 1px 1px 1px grey;
+                                        // color: black !important;
+                                    }
+                                }
+                                .singhUp{
+                                        color:aliceblue;
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                        margin: 0px;
+                                        span{
+                                            color: aliceblue;
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                            cursor: pointer;
+                        
+                                            text-decoration: underline;
+                        
+                                        }
+                                    }
+                                    .forgotPassword{
+                                        color: aliceblue;
+                                        margin: 0px;
+                                        cursor: pointer;
+                                        :hover{
+                                            text-decoration: underline;
+                                            text-decoration-color: aliceblue;
+                                        }
+                        
+                        
+                                    }
+                                
+                }}
+        // background: url("../../assets/login-page.png");
     }
 
 }
+//     height: 100vh;
+//     background: url('../../assets/background1.jpg');
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     .authenticationContainer{
+//         // max-width:50%;
+//         // width: 30%;
+//         color: black;
+//         padding: 30px;
+//         margin: auto;
+//         background-image: url("../../assets/sighnInImage.webp");
+//         background-repeat:no-repeat;
+//         background-size:cover;
+//         border-radius: 1.5rem;
+//         .primaryheader{
+//             border-radius: 10px;
+//             font-size: 18px;
+//             color: #d3e3ff;
+//             text-rendering: optimizeSpeed;
+//             font-weight: 900;
+//             padding: 0.5rem;
+//             text-emphasis:initial;
+
+//         }
+//         .signInForm{
+//             .field{
+//                 input.form-control {
+//                     background-color: rgba(48,94,135,0.9) !important;
+//                     color: black ;
+//                     border-radius: 15px;
+//                     font-weight: 600;
+                    
+//                 }
+//                 ::placeholder{
+//                     color: black ;
+//                 }
+//                 label{
+//                     width: 100%;
+//                     text-align: start;
+//                     color: aliceblue;
+//                     font-weight: 600;
+//                     margin-bottom: 10px;
+//                 }
+//             }
+//            
+//             .singhUp{
+//                 color:aliceblue;
+//                 font-size: 14px;
+//                 font-weight: 400;
+//                 margin: 0px;
+//                 span{
+//                     color: aliceblue;
+//                     font-size: 16px;
+//                     font-weight: 600;
+//                     cursor: pointer;
+
+//                     text-decoration: underline;
+
+//                 }
+//             }
+//             .forgotPassword{
+//                 color: aliceblue;
+//                 margin: 0px;
+//                 cursor: pointer;
+//                 :hover{
+//                     text-decoration: underline;
+//                     text-decoration-color: aliceblue;
+//                 }
+
+
+//             }
+
+            
+//         }
+//     }
+
+// }
 
 
 /* Sighn up Styles....................................................... */

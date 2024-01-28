@@ -10,5 +10,6 @@ export const validateUserSchema = Yup.object().shape({
   // shift: Yup.string().required("Please Select Shift Working In"),
   department: Yup.object().required('Please Select the department.'),
   shift: Yup.object().required('Please Select the shift.'),
-  hourlyPay:Yup.number().required("Enter Amount Paid Hourly")
+  hourlyPay:Yup.number().required("Enter Amount Paid Hourly"),
+  attendanceAction:Yup.object().required('Please select attendance action')
 });

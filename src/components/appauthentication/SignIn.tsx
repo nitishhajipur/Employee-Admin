@@ -10,6 +10,7 @@ import { error } from 'console'
 import ForgotPassword from './ForgotPassWord'
 import { useDispatch } from 'react-redux'
 import { appTypes } from '../../reducer/types'
+import img from '../../assets/login-page.png'
 const SignIn = () => {
     const dispatch=useDispatch()
 
@@ -27,13 +28,20 @@ const SignIn = () => {
     const navigate = useNavigate()
     return (
         <>
-            <div className='sighnIn'>
+            <div className='sighnIn row'>
+            <div className='col-lg-6 col-md-6 col-sm-12 col-xs-12 loginleftContainer'>
+                <div>
+                     
+            <p className='primaryheader'>Welcome ! Lets get started</p>
+                <img src={img} alt= "login png" className='im-fluid' />
+                </div>
+
+            </div>
               
-                    <div  className='authenticationContainer col-lg-4 col-md-6 col-sm-6 col-xs-12 '>
+             <div  className='authenticationContainer col-lg-6 col-md-6 col-sm-12 col-xs-12 '>
 
-                   
-                        <p className='primaryheader'>Welcome ! Lets get started</p>
-
+                   <div className='contentContainer'>
+                        <p className='primaryheader'> Sighn In </p>
                         <Formik
                             initialValues={{ userName: '', password: '' }}
                             validationSchema={schema}
@@ -93,6 +101,7 @@ const SignIn = () => {
                                 )
                             }}
                         </Formik>
+                        </div>
                         </div>
 
                         {/* <input type='text' className='form-control' placeholder='username'></input> */}
