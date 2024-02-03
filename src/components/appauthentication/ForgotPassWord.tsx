@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import CustomDialog from '../../common/CustomDialog'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
+import forgorPassword from '../../assets/forgotPassword.jpg'
+import verifyOtp from '../../assets/verifyotp.png'
+import './styles.scss'
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
+import { useNavigate } from 'react-router'
+import resetPassword from '../../assets/resetPassWord.png'
 const ForgotPassword=(props:any)=>{
     const [open,setOpen]=useState(false)
     const [informData,setInformaData]=useState({verfiyMailId:false,verifyOtp:false})
+    const navigate=useNavigate()
     useEffect(()=>{
         setInformaData({...informData,verfiyMailId:false,verifyOtp:false})
     },[])
@@ -60,18 +67,6 @@ const ForgotPassword=(props:any)=>{
     }
     return(
         <>
-        <p className='forgotPassword' onClick={(e:any)=>{
-            onOpen()
-            }}>Forgot Password ?.</p>
-        <CustomDialog
-        form={'forgotPassword'}
-        open={open}
-        maxWidth={"sm"}
-        fullWidth={true}
-        title={"Forgot Password"}
-        onClose={onClose}
-        actionType={'submit'}
-        >
             <Formik
             initialValues={{email:"",otp:'',newpassword:'',confirmPassWord:''}}
             onSubmit={(values:any)=>{
@@ -81,9 +76,18 @@ const ForgotPassword=(props:any)=>{
             >
 
                 {({errors,values})=>(
-                    
-                    <Form id='forgotPassword'>
+                    <div className='forgotGotContainer'>
 
+                        <div className='mainDiv' >
+
+                       
+                        <p className='m-0 mainHeader'> Retrive Password Form</p>
+                        <div className='mainContainer'>
+                    <Form id='forgotPasswordform'>
+                    <p className='mt-2 bg-primary text-light' onClick={(e:any)=>{navigate("/")}}>  <KeyboardDoubleArrowLeftIcon/> Back To Your Log In </p>
+                    <div className='margin-auto'>
+
+                    
                     { !informData?.verfiyMailId &&
                     <div className='fieldContainer'>
                         <label htmlFor='email' className='form-label'> Registered Email:</label>
@@ -99,7 +103,7 @@ const ForgotPassword=(props:any)=>{
                         </div>}
                         {
                             informData?.verfiyMailId && !informData.verifyOtp &&
-                            <div className='otp'>
+                            <div className='fieldContainer'>
                             <label htmlFor='otp' className='form-label'>  OTP :</label>
                         <Field
                         type='text'
@@ -114,7 +118,7 @@ const ForgotPassword=(props:any)=>{
                         }
                         {
                              informData?.verifyOtp &&
-                            <div className='passwoedChange Container'>
+                            <div className='passwoedChange fieldContainer'>
                                 <div className=''>
                                     <label htmlFor='newpassword' > Enter New Password :</label>
                                     <Field
@@ -144,13 +148,22 @@ const ForgotPassword=(props:any)=>{
 
                             </div> 
                         }
+                        </div>
+                        <button type='submit' className=' submit'> submit</button>
                 </Form>
+                <div className='imageContainer'>
+                            <img src={(!informData?.verfiyMailId)? forgorPassword:(!informData?.verifyOtp)?verifyOtp:resetPassword} className='img-fluid'/>
+
+                        </div>
+                </div>
+                </div>
+                </div>
+
                 )}
 
             </Formik>
            
 
-        </CustomDialog>
             </>
 
     )
