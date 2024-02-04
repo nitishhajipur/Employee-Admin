@@ -11,21 +11,29 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
+import GroupIcon from '@mui/icons-material/Group';
 import { InputSwitch } from 'primereact/inputswitch';
 import { NavLink } from 'react-router-dom';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import { useDispatch } from 'react-redux';
+import HomeIcon from '@mui/icons-material/Home';
 import { appTypes } from '../../../reducer/types';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { FetchData } from '../../../config/Fetch';
 import { maxHeight } from '@mui/system';
+import NavBarRoutes from '../../navbar/Index';
+import CustomTooltip from '../../../common/CustomTooltip';
 
 function Header(props:any) {
     const {setTheme,theme}=props
+    const location=useLocation()
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [userName,setUserName]=useState<any>()
     const open = Boolean(anchorEl);
+    const {pathname}=location
     const navigate = useNavigate();
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -47,17 +55,6 @@ function Header(props:any) {
         
     },[])
     
-
-
-
-
-
-
-
-
-
-
-
     const handleClose = (param: any) => {
         setAnchorEl(null);
         if(param == 'profile'){
@@ -70,10 +67,39 @@ function Header(props:any) {
         }
     };
     return (
-        <header>
+        <div>
+
+        <header className='d-flex mainContainer '>
+            <div className='header'>
+
+            <div className='headerContainer'>
+                <CustomTooltip title={"Home Tab"} position={"top"}>
+
+                <NavLink to="/" className={pathname == '/' ? 'selectedItem' : 'menuItem'}>
+                    <HomeIcon/>
+                </NavLink>
+                </CustomTooltip>
+                <CustomTooltip title={"User Tab"} position={"top"}>
+                <NavLink to="/users" className={pathname == '/users' ? 'selectedItem' : 'menuItem'}>
+                    <AssignmentIndIcon/>
+                </NavLink>
+                </CustomTooltip>
+                <CustomTooltip title={"Profile"} position={"top"}>
+
+                <NavLink to="/userProfile" className={pathname == '/userProfile' ? 'selectedItem' : 'menuItem'}>
+                    <GroupIcon/>
+                </NavLink>
+                </CustomTooltip>
+                <CustomTooltip title={"Approvals Tab "} position={"top"}>
+                <NavLink to="/Approvals" className={pathname == '/Approvals' ? 'selectedItem' : 'menuItem'}>
+                    <AppRegistrationIcon/>
+                </NavLink>
+                </CustomTooltip>
+            </div>
+            </div>
            
             
-            <div className='d-flex justify-content-end me-5'>
+            <div className='d-flex justify-content-end'>
                 <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                     <Tooltip title="Account settings">
                         <IconButton
@@ -83,7 +109,7 @@ function Header(props:any) {
                             aria-controls={open ? 'account-menu' : undefined}
                             aria-haspopup="true"
                             aria-expanded={open ? 'true' : undefined}
-                        >
+                            >
                             <Avatar sx={{ width: "fit-content" ,maxHeight: "50px" ,padding:"0.5rem"}}>{userName}</Avatar>
                         </IconButton>
                     </Tooltip>
@@ -122,7 +148,7 @@ function Header(props:any) {
                     }}
                     transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                >
+                    >
                     <MenuItem onClick={() => handleClose('profile')}>
                         <Avatar /> Profile
                     </MenuItem>
@@ -141,7 +167,7 @@ function Header(props:any) {
                             setTheme('dark')
                         }
                         else{
-
+                            
                             setTheme('light')}
                         }
                 } />
@@ -151,6 +177,8 @@ function Header(props:any) {
                 </Menu>
             </div>
         </header>
+        <NavBarRoutes/>
+    </div>
     )
 }
 

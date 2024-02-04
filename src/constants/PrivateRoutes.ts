@@ -5,7 +5,7 @@ export const privateRoutes=
     {
         element:"/home",
         pathName:"/*",
-        component:lazy(()=>import('../components/navbar/NavbarItem')),
+        component:lazy(()=>import('../components/modules/homePage/Header')),
         to:"/",
         renderChildren:true,
         children:[
