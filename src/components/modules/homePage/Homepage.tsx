@@ -6,19 +6,14 @@ import { Column } from 'primereact/column'
 import timeSheetsData from '../../../constants/timeSheets.json'
 import { FetchData } from '../../../config/Fetch'
 import { toast } from 'react-toastify'
+import { appTypes } from '../../../reducer/types'
+import { useDispatch } from 'react-redux'
 const HomePage = () => {
-    const id = sessionStorage.id;
+    const dispatch=useDispatch()
+    
     useEffect(() => {
-        FetchData({
-            url: `http://localhost:3006/api/findAdminById/${id}`,
-            method: 'GET',
-            data: ''
-        }).then((response: any) => {
-            console.log('resppp', response.data)
-        }).catch((error: any) => {
-            toast.error(error.message)
-        })
-    })
+       
+    },[])
     return (
         <div className='container-fluid'>
             <div className='row'>
