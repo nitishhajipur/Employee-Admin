@@ -22,6 +22,14 @@ import PrivateRoute from './routes/PrivateRoutes';
 
 function App() {
   const {isAuthenticated}=useSelector((state:any)=>state.application)
+  const dispatch=useDispatch()
+  const id=sessionStorage.getItem('id')
+  useEffect(()=>{
+    console.log("id28",id)
+    if(id){
+      dispatch({type:appTypes.IS_AUTHENTICATED,payload:true})
+    }
+  },[])
   
   return (
     <div className="App">

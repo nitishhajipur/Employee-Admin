@@ -6,7 +6,7 @@ export const privateRoutes=
         element:"/home",
         pathName:"/*",
         component:lazy(()=>import('../components/navbar/NavbarItem')),
-        to:"/*",
+        to:"/",
         renderChildren:true,
         children:[
             {
@@ -22,14 +22,6 @@ export const privateRoutes=
                 to:'./Approvals',
             }
         ]
-    },
-    {
-        element:"*",
-        pathName:"*",
-        component:lazy(()=>import('../common/NoPageFound')),
-        to:"*",
-        renderChildren:false,
-       
     },
 
 ]
