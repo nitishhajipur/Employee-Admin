@@ -14,6 +14,7 @@ import '../node_modules/primereact/resources/primereact.css'
 import "../node_modules/primeicons/primeicons.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+import ConfirmationAlert from './common/ConfirmAlert';
 
 
 
@@ -25,6 +26,7 @@ root.render(
 
   <BrowserRouter>
   <React.StrictMode>
+    <ConfirmationAlert/>
     <App />
   </React.StrictMode>
   </BrowserRouter>

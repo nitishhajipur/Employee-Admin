@@ -4,7 +4,14 @@ import { appTypes } from "./types"
 const initialState={
     allUserData:null,
     currentSheetDetails:null,
-    isAuthenticated:false
+    isAuthenticated:false,
+    modal:{
+        show:false,
+        onCancel:()=>{return null},
+        onOk:()=>{return null},
+        messeage:"",
+        title:""
+    }
 }
 export const Application=(state=initialState,action:any)=>{
     switch(action.type){
@@ -14,6 +21,8 @@ export const Application=(state=initialState,action:any)=>{
             return{...state,currentSheetDetails:action.payload}
         case appTypes.IS_AUTHENTICATED:
             return{...state,isAuthenticated:action.payload}
+        case appTypes.DISPATCH_ALERT:
+            return{...state,modal:action.payload}
         default:
             return{...state}
     }
