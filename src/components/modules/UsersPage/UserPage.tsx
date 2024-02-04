@@ -31,7 +31,8 @@ function UserPage() {
       isLoaded.current=true
     }
   }, []);
-  const handleDeleteUser = (rowData: any) => {
+
+  const deleteUser=(rowData:any)=>{
     const payload={id:rowData._id}
     dispatch(DeleteUser(payload, (response: any) => {
       if(response.status === "success"){
@@ -46,6 +47,11 @@ function UserPage() {
         setUserData(data)
       }))
     }))
+
+  }
+  const handleDeleteUser = (rowData: any) => {
+    dispatch({type:appTypes.DISPATCH_ALERT,payload:{
+      show:true,title:"Alert",onOk:()=>{deleteUser(rowData)},message:"This Action Will Remove User Completely From Organization Data Do you Want to Continue ?",onCancel:()=>{return null}}})
   }
 
   const actionTemplate = (rowData: any) => {

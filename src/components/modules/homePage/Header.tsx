@@ -33,6 +33,7 @@ function Header(props:any) {
         }
         if(param == 'logout'){
             navigate('/')
+            sessionStorage.setItem('id','')
             dispatch({type:appTypes.IS_AUTHENTICATED,payload:false})
         }
     };

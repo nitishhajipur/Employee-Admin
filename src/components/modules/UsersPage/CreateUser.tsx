@@ -40,16 +40,17 @@ function CreateUser(props: any) {
       dispatch(CreateNewUser(data, (response: any) => {
         if (response.status === 'success') {
           toast.success(response.message)
+          dispatch(GetAllUserData((data: any) => {
+            console.log('41....', data)
+            setUserData(data)
+            onClose();
+          }))
 
         }
         else {
           toast.error(response.message)
         }
-        dispatch(GetAllUserData((data: any) => {
-          console.log('41....', data)
-          setUserData(data)
-          onClose();
-        }))
+
 
       }))
     }
@@ -57,15 +58,16 @@ function CreateUser(props: any) {
       dispatch(updateUser(data, (response: any) => {
         if (response.status === 'success') {
           toast.success(response.message)
+          dispatch(GetAllUserData((userData: any) => {
+            setUserData(userData)
+            onClose();
+          }))
 
         }
         else {
           toast.error(response.message)
         }
-        dispatch(GetAllUserData((userData: any) => {
-          setUserData(userData)
-          onClose();
-        }))
+       
       }))
 
     }
