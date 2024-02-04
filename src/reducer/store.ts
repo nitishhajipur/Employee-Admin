@@ -4,7 +4,7 @@ import MainReducer from ".";
 
 const store=configureStore({
     reducer:MainReducer,
-    middleware:((getDefaultMiddleware:any)=>getDefaultMiddleware([thunk]))
+    middleware:((getDefaultMiddleware:any)=>getDefaultMiddleware([thunk],{serializableCheck: false}))
 
 
 },)

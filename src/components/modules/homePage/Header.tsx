@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -16,16 +16,48 @@ import { InputSwitch } from 'primereact/inputswitch';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { appTypes } from '../../../reducer/types';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { FetchData } from '../../../config/Fetch';
+import { maxHeight } from '@mui/system';
 
 function Header(props:any) {
     const {setTheme,theme}=props
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const [userName,setUserName]=useState<any>()
     const open = Boolean(anchorEl);
     const navigate = useNavigate();
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
     const dispatch=useDispatch()
+    const id = sessionStorage.id;
+    useEffect(()=>{
+        FetchData({
+            url: `http://localhost:3006/api/findAdminById/${id}`,
+            method: 'GET',
+            data: ''
+        }).then((response: any) => {
+            dispatch({type:appTypes.USER_DETAILS,payload:response.data})
+            let userId=(response?.data?.firstName[0]+response?.data?.lastName[0]).toUpperCase()
+            setUserName(userId)
+        }).catch((error: any) => {
+            // toast.error(error.message)
+        })
+        
+    },[])
+    
+
+
+
+
+
+
+
+
+
+
+
     const handleClose = (param: any) => {
         setAnchorEl(null);
         if(param == 'profile'){
@@ -52,7 +84,7 @@ function Header(props:any) {
                             aria-haspopup="true"
                             aria-expanded={open ? 'true' : undefined}
                         >
-                            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                            <Avatar sx={{ width: "fit-content" ,maxHeight: "50px" ,padding:"0.5rem"}}>{userName}</Avatar>
                         </IconButton>
                     </Tooltip>
                 </Box>

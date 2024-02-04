@@ -7,11 +7,12 @@ const initialState={
     isAuthenticated:false,
     modal:{
         show:false,
-        onCancel:()=>{return null},
-        onOk:()=>{return null},
+         onCancel:()=>{},
+        onOk:()=>{},
         messeage:"",
         title:""
-    }
+    },
+    userDetails:null
 }
 export const Application=(state=initialState,action:any)=>{
     switch(action.type){
@@ -23,6 +24,8 @@ export const Application=(state=initialState,action:any)=>{
             return{...state,isAuthenticated:action.payload}
         case appTypes.DISPATCH_ALERT:
             return{...state,modal:action.payload}
+        case appTypes.USER_DETAILS:
+            return{...state,userDetails:action.payload}
         default:
             return{...state}
     }
