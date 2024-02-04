@@ -1,3 +1,17 @@
+@import '../../../globalVars.scss';
+
+@mixin menuItem{
+    border-radius: 50%;
+    // display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
 .adminDashboard .cardContainer:nth-child(1) .Common-card {
     background:linear-gradient(45deg,#39cdc3,#31aed5,transparent);
     color: white;
@@ -48,4 +62,40 @@
 }
 .timesheetsTable .Common-card{
     width: 98% !important;
+}
+.mainContainer{
+    background-color: $header-light-background;
+.header{
+    // background-color:#a1a1a3 ;
+    position: relative;
+    width: 95%;
+    .headerContainer{
+        position: absolute;
+        top: 1.5rem;
+        left: 25%;
+        width: 60%;
+        background-color: rgba(65,98,121,255);
+        backdrop-filter: 5px 5px;
+        opacity: 0.75;
+        border-radius: 15px;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        // gap: 3rem;
+        padding: 0.5rem 3rem;
+        color: aliceblue;
+        .menuItem{
+            @include menuItem;
+            color:black
+           
+        }
+        .selectedItem{
+            @include menuItem;
+            translate: 0 15px;
+            color: white;
+            background: black;
+        }
+        // box-shadow: inset -5px -5px 5px #a1a1a3,5px 5px 10px #a1a1a3 ;
+    }
+}
 }
