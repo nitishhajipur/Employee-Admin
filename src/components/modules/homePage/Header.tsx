@@ -4,12 +4,8 @@ import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useLocation, useNavigate } from 'react-router';
 import GroupIcon from '@mui/icons-material/Group';
@@ -20,12 +16,10 @@ import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import { useDispatch } from 'react-redux';
 import HomeIcon from '@mui/icons-material/Home';
 import { appTypes } from '../../../reducer/types';
-import { useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
 import { FetchData } from '../../../config/Fetch';
-import { maxHeight } from '@mui/system';
 import NavBarRoutes from '../../navbar/Index';
 import CustomTooltip from '../../../common/CustomTooltip';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 function Header(props:any) {
     const {setTheme,theme}=props
@@ -47,13 +41,14 @@ function Header(props:any) {
             data: ''
         }).then((response: any) => {
             dispatch({type:appTypes.USER_DETAILS,payload:response.data})
-            let userId=(response?.data?.firstName[0]+response?.data?.lastName[0]).toUpperCase()
-            setUserName(userId)
+            let userId=(response?.data?.firstName+ " "+response?.data?.lastName).toUpperCase()
+            setUserName(userId.split(" "))
         }).catch((error: any) => {
             // toast.error(error.message)
         })
         
     },[])
+    console.log(userName,"57.....usernamer")
     
     const handleClose = (param: any) => {
         setAnchorEl(null);
@@ -67,10 +62,14 @@ function Header(props:any) {
         }
     };
     return (
-        <div>
+        <div className='container-fluid gx-0'>
 
         <header className='d-flex mainContainer '>
+            <div className='appHeading'>
+                <p className='m-0'>Admin Portal </p>
+            </div>
             <div className='header'>
+
 
             <div className='headerContainer'>
                 <CustomTooltip title={"Home Tab"} position={"top"}>
@@ -97,9 +96,9 @@ function Header(props:any) {
                 </CustomTooltip>
             </div>
             </div>
-           
-            
-            <div className='d-flex justify-content-end'>
+            <div className='d-flex justify-content-end align-items-center header-left-panel '>
+                <span>Welcome {userName?.length>0?userName[0]+userName[1]  :""} !</span>
+                <span className='icon'><NotificationsIcon/></span>
                 <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                     <Tooltip title="Account settings">
                         <IconButton
@@ -110,7 +109,7 @@ function Header(props:any) {
                             aria-haspopup="true"
                             aria-expanded={open ? 'true' : undefined}
                             >
-                            <Avatar sx={{ width: "fit-content" ,maxHeight: "50px" ,padding:"0.5rem"}}>{userName}</Avatar>
+                            <Avatar sx={{ width: "fit-content" ,maxHeight: "50px" ,padding:"0.5rem"}}>{(userName?.length>0?userName[0][0]+userName[1][0]:"")}</Avatar>
                         </IconButton>
                     </Tooltip>
                 </Box>
