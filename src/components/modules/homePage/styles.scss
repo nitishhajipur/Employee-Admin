@@ -65,14 +65,34 @@
 }
 .mainContainer{
     background-color: $header-light-background;
+    justify-content: space-between;
+    .appHeading{
+        margin: 0 2rem 0 2rem;
+        p{
+    text-align: center;
+    // background-color: white;
+    padding: 0.5rem;
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px black ;
+    font-size: 18px;
+        }
+    }
+    .header-left-panel{
+        gap: 0.5rem;
+        color: white;
+        font-size: 18px;
+
+       
+    }
 .header{
     // background-color:#a1a1a3 ;
     position: relative;
-    width: 95%;
+    width: 60%;
     .headerContainer{
         position: absolute;
         top: 1.5rem;
-        left: 25%;
+        left: 15%;
         width: 60%;
         background-color: rgba(65,98,121,255);
         backdrop-filter: 5px 5px;
