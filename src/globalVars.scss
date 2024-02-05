@@ -1,6 +1,6 @@
 $primary-background-theme-light:#f1f1f1;
 $primary-text-theme-color:black;
-$header-light-background:rgba(121,189,230,255);
+$header-light-background:rgba(86,118,128,255);
 // $secondary-background-theme-dark:rgba(18, 17, 17,0.4);
 @mixin themeController($theme){
     @if $theme == 'dark'{
