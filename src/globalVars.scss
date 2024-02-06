@@ -8,3 +8,14 @@ $header-light-background:rgba(86,118,128,255);
         $primary-text-theme-color:#f1f1f1 !global; 
     }
 }
+@mixin mobileView{
+    @media (min-width:330px) and (max-width:768px) {
+        @content
+        
+    }
+}
+@mixin laptopMedia{
+    @media  (min-width: 768px) and (max-width: 1024px) {
+        @content
+    }
+}

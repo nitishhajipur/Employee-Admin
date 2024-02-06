@@ -7,27 +7,22 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Logout from '@mui/icons-material/Logout';
-import { useLocation, useNavigate } from 'react-router';
-import GroupIcon from '@mui/icons-material/Group';
+import {  useNavigate } from 'react-router';
 import { InputSwitch } from 'primereact/inputswitch';
-import { NavLink } from 'react-router-dom';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import { useDispatch } from 'react-redux';
-import HomeIcon from '@mui/icons-material/Home';
 import { appTypes } from '../../../reducer/types';
 import { FetchData } from '../../../config/Fetch';
 import NavBarRoutes from '../../navbar/Index';
-import CustomTooltip from '../../../common/CustomTooltip';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import MainNavBarContainer from './NavBarBasic';
+import HamburgerMenu from './HabugeerMenu';
 
 function Header(props:any) {
     const {setTheme,theme}=props
-    const location=useLocation()
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [userName,setUserName]=useState<any>()
     const open = Boolean(anchorEl);
-    const {pathname}=location
+    
     const navigate = useNavigate();
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -66,36 +61,11 @@ function Header(props:any) {
 
         <header className='d-flex mainContainer '>
             <div className='appHeading '>
+            <HamburgerMenu/>
                 <p className='m-0'>Admin Portal </p>
             </div>
-            <div className='header'>
-
-
-            <div className='headerContainer'>
-                <CustomTooltip title={"Home Tab"} position={"top"}>
-
-                <NavLink to="/" className={pathname == '/' ? 'selectedItem' : 'menuItem'}>
-                    <HomeIcon/>
-                </NavLink>
-                </CustomTooltip>
-                <CustomTooltip title={"User Tab"} position={"top"}>
-                <NavLink to="/users" className={pathname == '/users' ? 'selectedItem' : 'menuItem'}>
-                    <AssignmentIndIcon/>
-                </NavLink>
-                </CustomTooltip>
-                <CustomTooltip title={"Profile"} position={"top"}>
-
-                <NavLink to="/userProfile" className={pathname == '/userProfile' ? 'selectedItem' : 'menuItem'}>
-                    <GroupIcon/>
-                </NavLink>
-                </CustomTooltip>
-                <CustomTooltip title={"Approvals Tab "} position={"top"}>
-                <NavLink to="/Approvals" className={pathname == '/Approvals' ? 'selectedItem' : 'menuItem'}>
-                    <AppRegistrationIcon/>
-                </NavLink>
-                </CustomTooltip>
-            </div>
-            </div>
+            <MainNavBarContainer/>
+          
             <div className='d-flex justify-content-end align-items-center header-left-panel '>
                 <span>Welcome {userName?.length>0?userName[0]+userName[1]  :""} !</span>
                 <span className='icon'><NotificationsIcon/></span>

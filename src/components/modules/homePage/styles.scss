@@ -63,12 +63,17 @@
 .timesheetsTable .Common-card{
     width: 98% !important;
 }
+
 .mainContainer{
     background-color: $header-light-background;
     justify-content: space-between;
     border-bottom: 2px solid black;
     
+    
     .appHeading{
+        .ham-memu{
+            display: none ;
+        }
         margin: 0 2rem 0 2rem;
         p{
     text-align: center;
@@ -86,7 +91,7 @@
         font-size: 18px;
         .icon{
             cursor: pointer;
-            font-size: 24px !important;
+            font-size: 18px !important;
         }
 
        
@@ -124,7 +129,75 @@
             box-shadow: 3px 3px black, -3px -3px 4px grey inset;
             border:2px solid green
         }
+
         // box-shadow: inset -5px -5px 5px #a1a1a3,5px 5px 10px #a1a1a3 ;
     }
 }
+}
+
+@mixin enableHambuger{
+    .ham-menu-container{
+        display: block !important;
+    }
+   
+    .mainContainer{
+        .header{
+
+            display: none !important;
+        }
+        .appHeading{
+            display: flex;
+            align-items: center;
+            // color: white;
+            .ham-memu{
+                display: block ;
+                // color: white;
+                .MuiButtonBase-root{
+                    svg{
+                        color: white;
+                    }
+                }
+               
+            }}
+    }
+
+}
+@include laptopMedia{
+    @include enableHambuger
+   
+}
+@include mobileView{
+    @include enableHambuger;
+    .mainContainer{
+
+        .header-left-panel{
+            font-size: 14px;
+            
+        }
+    }
+
+}
+.ham-menu-container{
+    display: none ;
+    .MuiPaper-root{
+        ul{
+            li{
+                a{
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+                .menuItem{
+                    color: black;
+                    font-size: 13px;
+                    font-weight: 400
+                }
+                .selectedItem{
+                    color: green;
+                    font-size: 13px;
+                    font-weight: 400
+
+                }
+            }
+        }
+    }
 }
