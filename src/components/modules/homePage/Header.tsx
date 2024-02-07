@@ -18,7 +18,8 @@ import MainNavBarContainer from './NavBarBasic';
 import HamburgerMenu from './HabugeerMenu';
 
 function Header(props:any) {
-    const {setTheme,theme}=props
+    // const {setTheme,theme}=props
+    const [theme,setTheme]=useState('light')
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [userName,setUserName]=useState<any>()
     const open = Boolean(anchorEl);
@@ -146,7 +147,10 @@ function Header(props:any) {
                 </Menu>
             </div>
         </header>
+        <div className={ `App-container-${theme}`}>
+
         <NavBarRoutes/>
+        </div>
     </div>
     )
 }
