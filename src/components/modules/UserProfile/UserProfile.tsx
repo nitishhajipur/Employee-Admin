@@ -4,7 +4,7 @@ import './styles.scss'
 function UserProfile() {
 
   return (
-    <div className='col-12 d-flex user-profile-page my-3 mx-5'>
+    <div className='col-12 d-flex user-profile-page mx-5'>
       <p>users page </p>
       {/* <div className='col-4 contentsConatiner bg-dark'>
         <div className='profile-pic-wrapper'>

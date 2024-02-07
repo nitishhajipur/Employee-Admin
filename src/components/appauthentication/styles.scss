@@ -1,8 +1,8 @@
 // // sighn in styles 
 $colr1mix:color-mix(in srgb, black 60%, white 40%);
 .sighnIn{
-    height: 95vh;
-    margin:1rem;
+    height: 100vh;
+    // margin:1rem;
     
     .loginleftContainer{
         height: 100%;
@@ -12,8 +12,8 @@ $colr1mix:color-mix(in srgb, black 60%, white 40%);
         align-items: center;
         padding: 20px;
         justify-content: center;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+        // border-top-left-radius: 25px;
+        // border-bottom-left-radius: 25px;
         .primaryheader{
             border-radius: 10px;
             font-size: 18px;
@@ -31,8 +31,8 @@ $colr1mix:color-mix(in srgb, black 60%, white 40%);
         
     }
     .authenticationContainer{
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
+        // border-top-right-radius: 25px;
+        // border-bottom-right-radius: 25px;
         background-color:rgba(43,53,62,1);
         color: white;
          padding: 30px 10px 0px 10px;

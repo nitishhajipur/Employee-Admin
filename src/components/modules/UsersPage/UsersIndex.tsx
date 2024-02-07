@@ -7,7 +7,7 @@ import ConfirmationAlert from "../../../common/ConfirmAlert";
 export default function UserIndex() {
   
   return (
-    <CommonCard title={'User management'} className={"mx-5 my-4"}>
+    <CommonCard title={'User management'} className={"mx-5"}>
       <UserPage/>
     </CommonCard>
   );

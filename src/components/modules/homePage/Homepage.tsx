@@ -15,7 +15,7 @@ const HomePage = () => {
        
     },[])
     return (
-        <div className='row gx-0 mt-3 mx-5 '>
+        <div className='row gx-0  mx-5 '>
             <div className='gy-0'>
                 <div className='adminDashboard d-flex col-12'>
                     <div className='col-4 cardContainer '>

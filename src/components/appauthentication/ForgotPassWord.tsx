@@ -7,6 +7,7 @@ import './styles.scss'
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import { useNavigate } from 'react-router'
 import resetPassword from '../../assets/resetPassWord.png'
+// import { UisAirplay } from '@iconscout/react-unicons-solid'
 const ForgotPassword=(props:any)=>{
     const [open,setOpen]=useState(false)
     const [informData,setInformaData]=useState({verfiyMailId:false,verifyOtp:false})
