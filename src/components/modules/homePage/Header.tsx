@@ -49,7 +49,7 @@ function Header(props:any) {
     const handleClose = (param: any) => {
         setAnchorEl(null);
         if(param == 'profile'){
-            navigate('/menu/userProfile')
+            navigate('/userProfile')
         }
         if(param == 'logout'){
             navigate('/')
@@ -148,7 +148,6 @@ function Header(props:any) {
             </div>
         </header>
         <div className={ `App-container-${theme}`}>
-
         <NavBarRoutes/>
         </div>
     </div>
