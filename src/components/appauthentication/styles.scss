@@ -194,8 +194,31 @@ $colr1mix:color-mix(in srgb, black 60%, white 40%);
         color: white;
         font-size: 18px;
         font-weight: 600;
-        padding: 10px;
-        word-spacing: 1,5rem;
+        align-items: center;
+        .heading{
+            width: 90%;
+            padding: 10px;
+        }
+        .backtoicon{
+            border-radius: 50%;
+            background-color: white;
+            // padding: 10px 0px 10px 10px;
+            color: #aecdfc;
+            text-align: center;
+            font-size: 18px;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.5rem;
+            width:2.5rem;
+            &:hover{
+                background-color: #cbdcf7;
+                color: white;
+                font-weight: 800;
+                text-shadow: 1px 1px black;
+            }
+        }
         
     }
         
@@ -205,6 +228,7 @@ $colr1mix:color-mix(in srgb, black 60%, white 40%);
         display: flex;
         background-color: white;
         #forgotPasswordform{
+            padding-top: 8%;
 
             .submit{
                 padding: 5px;

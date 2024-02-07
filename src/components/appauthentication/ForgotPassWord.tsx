@@ -7,6 +7,8 @@ import './styles.scss'
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import { useNavigate } from 'react-router'
 import resetPassword from '../../assets/resetPassWord.png'
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import CustomTooltip from '../../common/CustomTooltip'
 // import { UisAirplay } from '@iconscout/react-unicons-solid'
 const ForgotPassword=(props:any)=>{
     const [open,setOpen]=useState(false)
@@ -80,15 +82,18 @@ const ForgotPassword=(props:any)=>{
                     <div className='forgotGotContainer'>
 
                         <div className='mainDiv' >
+                            <div className='mainHeader d-flex'>
 
-                       
-                        <p className='m-0 mainHeader'> Retrive Password Form</p>
+                        <p className='m-0 heading'> Retrive Password Form</p>
+                        <CustomTooltip title="Back To login">
+
+                        <span className='backtoicon' onClick={(e:any)=>{navigate("/")}}><SkipPreviousIcon/></span>
+                        </CustomTooltip>
+                            </div>
                         <div className='mainContainer'>
                     <Form id='forgotPasswordform'>
-                    <p className='mt-2 bg-primary text-light' onClick={(e:any)=>{navigate("/")}}>  <KeyboardDoubleArrowLeftIcon/> Back To Your Log In </p>
+                    {/* <p className='mt-2 bg-primary text-light' onClick={(e:any)=>{navigate("/")}}>  <KeyboardDoubleArrowLeftIcon/> Back To Your Log In </p> */}
                     <div className='margin-auto'>
-
-                    
                     { !informData?.verfiyMailId &&
                     <div className='fieldContainer'>
                         <label htmlFor='email' className='form-label'> Registered Email:</label>
