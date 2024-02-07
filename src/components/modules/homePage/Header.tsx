@@ -60,7 +60,7 @@ function Header(props:any) {
     return (
         <div className='container-fluid gx-0'>
 
-        <header className='d-flex mainContainer '>
+        <header className='d-flex headContainer '>
             <div className='appHeading '>
             <HamburgerMenu/>
                 <p className='m-0'>Admin Portal </p>
