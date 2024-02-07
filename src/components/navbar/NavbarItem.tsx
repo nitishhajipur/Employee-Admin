@@ -28,7 +28,7 @@ const NavItems = () => {
                 </div>
             </nav>
             <div className="col-10 container-fluid gx-0 gy-0 body-container">
-                <Header setTheme={setTheme} theme={theme}/>
+                <Header />
                 <NavBarRoutes/>
                 <Outlet />
             </div>
