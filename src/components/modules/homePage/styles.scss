@@ -123,7 +123,7 @@
         }
         .selectedItem{
             @include menuItem;
-            translate: 0 15px;
+            // translate: 0 15px;
             color: white;
             background: black;
             box-shadow: 3px 3px black, -3px -3px 4px grey inset;

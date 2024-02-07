@@ -25,10 +25,9 @@
   color:$primary-text-theme-color ;
   min-height: 100%;
   // --bs-gutter-x: 0px !important;
-
 }
 .App-container-dark{
-  @include themeController('dark');
+  // @include themeController('dark');
   max-height: 100%;
   min-height: 100vh;
   background-color: $primary-background-theme-light;
