@@ -18,18 +18,20 @@
   }
 }
 .App-container-light {
-  max-height: 100%;
+  // max-height: 100%;
   // @include themeController('dark');
   background-color: $primary-background-theme-light;
   color:$primary-text-theme-color ;
-  min-height: 100vh;
+  height: 92vh;
   padding-top:20px; 
+  overflow-y: auto;
   // --bs-gutter-x: 0px !important;
 }
 .App-container-dark{
  @include themeController('dark');
-  max-height: 100%;
-  min-height: 100vh;
+  // max-height: 100%;
+  // min-height: 100vh;
+  height: 92vh;
   padding-top:20px; 
   background-color: $primary-background-theme-light;
   color:$primary-text-theme-color ;
