@@ -63,6 +63,12 @@
     }
 }
 }
+.sheetDetailsContainer {
+  .p-datatable-wrapper{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+  }
+}
   
 .nav-container{
   display: block;
