@@ -1,11 +1,13 @@
 .user-profile-page{
     height: 100%;
+
+    // top Section Styles
     .user-profile-top-card{
-        background: url('../../../assets/userprofileBackgroundImage.webp');
+        background: url('../../../assets/userprofile.webp');
         background-size: cover;
         opacity: 0.8;
         background-repeat: no-repeat;
-        max-height: 20%;
+        height: 30%;
         border-radius: 15px;
         color: white;
         position: relative;
@@ -22,18 +24,80 @@
             border: 3px  solid linear-gradient(45deg black blue) ;
             height: 150px;
             padding-top: 10px;
+            .pic-container{
+                position: relative;
+
             .profilepic{
-                height: 4rem;
-                width: 4rem;
+                height: 5rem;
+                width: 5rem;
                 display: flex;
+                cursor: pointer;
                 justify-content: center;
                 align-items: center;
                 font-size: larger;
                 border-radius: 50%;
                 background-color: grey;
                 margin: auto;
+                img{
+                    border-radius: 50%;
+                }
             }
+            .imgoffset{
+                position: absolute;
+                height: 5rem;
+                width: 5rem;
+                display: flex;
+                cursor: pointer;
+               
+                justify-content: center;
+                align-items: end;
+                font-size: larger;
+                border-radius: 50%;
+                opacity: 0;
+                font-size: 12px;
+                top: 0;
+                left: 0;
+                color: white;
+                background-color: black;
+            }
+            &:hover{
+                .profilepic{
+                    opacity: 0.8;
+                }
+                .imgoffset{
+                    opacity: 0.6;
+                    text-shadow: 2px 2px grey;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+
+            }
+        }
+
+        }
+    }
+    .b-container{
+        height: 60%;
+        .left-container{
+            background:url('../../../assets/leftpannel.webp');
+            border-radius: 15px ;
+            width: 30%;
+            opacity: 0.75;
+            color: aliceblue;
+            box-shadow: inset -2px -2px 2px grey ,2px 2px 4px grey;
+
+        }
+        .right-container{
+            color: aliceblue;
+            border-radius: 15px;
+            box-shadow:inset  -2px -2px 2px grey,2px 2px 4px grey;
+            background:url('../../../assets/right-pannenel.webp');
+            width: 70%;
         }
     }
     
+
+
+    // UserProdile Bottom Section 
+
 }
