@@ -1,6 +1,39 @@
 .user-profile-page{
-    .contentsConatiner{
-        box-shadow: inset -3px 2px white,3px 3px 4px white ;
-
+    height: 100%;
+    .user-profile-top-card{
+        background: url('../../../assets/userprofileBackgroundImage.webp');
+        background-size: cover;
+        opacity: 0.8;
+        background-repeat: no-repeat;
+        max-height: 20%;
+        border-radius: 15px;
+        color: white;
+        position: relative;
+        .profileCard{
+            width:fit-content;
+            padding: 5rem;
+            margin:auto;
+            background: white;
+            color: black;
+            position: absolute;
+            top: 25%;
+            left: 40%;
+            font-size: 13px;
+            border: 3px  solid linear-gradient(45deg black blue) ;
+            height: 150px;
+            padding-top: 10px;
+            .profilepic{
+                height: 4rem;
+                width: 4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: larger;
+                border-radius: 50%;
+                background-color: grey;
+                margin: auto;
+            }
+        }
     }
+    
 }

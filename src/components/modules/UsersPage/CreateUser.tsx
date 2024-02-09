@@ -28,7 +28,6 @@ function CreateUser(props: any) {
 
 
   const submitHandler = (values: any) => {
-    console.log("17...", values);
     const data = {
       ...values,
       department: values.department.value,
@@ -41,7 +40,6 @@ function CreateUser(props: any) {
         if (response.status === 'success') {
           toast.success(response.message)
           dispatch(GetAllUserData((data: any) => {
-            console.log('41....', data)
             setUserData(data)
             onClose();
           }))
@@ -110,7 +108,6 @@ function CreateUser(props: any) {
             onSubmit={(values: any) => submitHandler(values)}
           >
             {({ values, errors, touched, setFieldValue }) => {
-              console.log('113....', values, rowData)
               return (
                 <Form id="createUser">
                   <div className="row ">
@@ -267,7 +264,6 @@ function CreateUser(props: any) {
                           isMulti={false}
 
                           onChange={(e: any) => {
-                            console.log('249...', e)
                             setFieldValue("department", e)
                           }
                           }

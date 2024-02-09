@@ -44,7 +44,6 @@ function Header(props:any) {
         })
         
     },[])
-    console.log(userName,"57.....usernamer")
     
     const handleClose = (param: any) => {
         setAnchorEl(null);
@@ -132,7 +131,6 @@ function Header(props:any) {
                     <ListItemIcon className='d-flex justify-content-between'>
                         <label className='mx-2'>Light</label>
                     <InputSwitch  checked={(theme === 'dark') ? true:false} onChange={(e) =>{
-                        console.log(e,"99values")
                         if(e.value){
                             setTheme('dark')
                         }

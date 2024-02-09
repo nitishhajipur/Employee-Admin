@@ -6,7 +6,6 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import { FetchData } from '../../config/Fetch'
 import { toast } from 'react-toastify'
-import { error } from 'console'
 import ForgotPassword from './ForgotPassWord'
 import { useDispatch } from 'react-redux'
 import { appTypes } from '../../reducer/types'
@@ -51,13 +50,10 @@ const SignIn = () => {
                                     method: 'POST',
                                     data: values
                                 }).then((response: any) => {
-                                    console.log('resppp', response.data)
                                     if(response.data?.status === 'error'){
                                         toast.error(response.data.message)
                                     }else{
-                                        sessionStorage.setItem('id',response.data.id)
-                                        console.log("59...",response.data)
-                                      
+                                        sessionStorage.setItem('id',response.data.id)                                      
                                         dispatch({type:appTypes.IS_AUTHENTICATED,payload:true})
                                         navigate('/')
                                     }

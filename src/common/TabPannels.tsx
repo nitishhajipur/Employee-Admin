@@ -7,7 +7,6 @@ import TabPanel from '@mui/lab/TabPanel';
 const  TabPanelsComponent=(props:any)=> {
     const {data}=props
   const [value, setValue] = React.useState(data['0']?.id);
-  console.log(data['0'],value,"10..props")
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);

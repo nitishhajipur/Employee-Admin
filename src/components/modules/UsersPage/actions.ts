@@ -47,7 +47,6 @@ export const GetAllUserData: any = (callback: any) => {
   };
 };
 export const DeleteUser: any = (props: any, callback: any) => {
-  console.log("22...props", props);
   const url = `http://localhost:3006/api/deleteUserById/${props.id}`;
   return (dispatch: any) => {
     FetchData({
@@ -56,7 +55,6 @@ export const DeleteUser: any = (props: any, callback: any) => {
       data: null,
     })
       .then((response: any) => {
-        console.log(response, "46...rep");
         callback(response.data);
       })
       .catch((error: any) => {
