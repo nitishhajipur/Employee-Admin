@@ -55,7 +55,6 @@ function UserPage() {
   }
 
   const actionTemplate = (rowData: any) => {
-    console.log(rowData, "12122")
     return (
       <div className="d-flex">
        <CreateUser rowData={rowData} setUserData={setUserData}/>|&nbsp;

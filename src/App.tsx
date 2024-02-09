@@ -25,7 +25,6 @@ function App() {
   const dispatch=useDispatch()
   const id=sessionStorage.getItem('id')
   useEffect(()=>{
-    console.log("id28",id)
     if(id){
       dispatch({type:appTypes.IS_AUTHENTICATED,payload:true})
     }

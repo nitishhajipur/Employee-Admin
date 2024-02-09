@@ -12,50 +12,52 @@
 
 
 }
-.adminDashboard .cardContainer:nth-child(1) .Common-card {
-    background:linear-gradient(45deg,#39cdc3,#31aed5,transparent);
+@mixin cardBody{
     color: white;
     font-weight: 500;
+    font-size: 12px;
+
 }
-.adminDashboard .cardContainer:nth-child(2) .Common-card {
-    background:linear-gradient(45deg,#ff8357,#fd829a,transparent);
-    color: white;
-    font-weight: 500;
-}
-.adminDashboard .cardContainer:nth-child(3) .Common-card {
-    background:linear-gradient(45deg,#ee70e9,#bd6af0,transparent);
-    color: white;
-    font-weight: 500;
-} 
-.adminDashboard .cardContainer:nth-child(1) .card-title{
-    font-size: 14px;
+
+@mixin cardHeader{
+    font-size: 13px;
+    font-weight: 400;
+    text-shadow: 1px 1px 1px black;
     max-height: fit-content;
     height: fit-content;
     text-align: center;
     display: flex;
     justify-content: center;
+
+}
+.adminDashboard .cardContainer:nth-child(1) .Common-card {
+    background:linear-gradient(45deg,#39cdc3,#31aed5,transparent);
+    @include cardBody;
+
+}
+.adminDashboard .cardContainer:nth-child(2) .Common-card {
+    background:linear-gradient(45deg,#ff8357,#fd829a,transparent);
+    @include cardBody;
+}
+.adminDashboard .cardContainer:nth-child(3) .Common-card {
+    background:linear-gradient(45deg,#ee70e9,#bd6af0,transparent);
+    @include cardBody;
+} 
+.adminDashboard .cardContainer:nth-child(1) .card-title{
+    @include cardHeader;
+   
     color: black;
     background:lightblue;
 
 }
 .adminDashboard .cardContainer:nth-child(2) .card-title{
-    font-size: 14px;
-    max-height: fit-content;
-    height: fit-content;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+    @include cardHeader;
     color: white;
     background:#fd829a;
 
 }
 .adminDashboard .cardContainer:nth-child(3) .card-title{
-    font-size: 14px;
-    max-height: fit-content;
-    height: fit-content;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+    @include cardHeader;
     color: black;
     background:#ee70e9;
 

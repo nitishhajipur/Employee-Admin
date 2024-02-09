@@ -10,7 +10,7 @@ interface Props {
 export default function PrivateRoute(props: Props):any {
   const { children, isAuthenticated, to = "/" } = props;
   const { pathname } = useLocation();
-  // console.log("15...",pathname,to)
+  // .log("15...",pathname,to)
   return isAuthenticated ? (
     children
   ) : (

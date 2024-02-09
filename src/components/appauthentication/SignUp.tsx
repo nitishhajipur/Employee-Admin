@@ -29,13 +29,11 @@ const SignUp = (props: any) => {
                             
         const handleSubmit = (values: any) => {
         delete values.confirmPassword
-        console.log('20...', values)
         FetchData({
             url: 'http://localhost:3006/api/registerAdmin',
             method: 'POST',
             data: values
         }).then((response: any) => {
-            console.log('resppp', response.data)
             toastAlert(response.data)
         }).catch((error: any) => {
             toast.success(error.message)
@@ -58,7 +56,6 @@ const SignUp = (props: any) => {
                     >
                         {({ values, errors }) => (
                             <Form>
-                                <>{console.log(errors, "22...")}</>
                                 <div className='registration'>
                                     <h4>Register Admin</h4>
                                     <div className='fieldContainer'>
