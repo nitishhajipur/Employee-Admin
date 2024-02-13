@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import rightPortionImage from '../../assets/leftcoverpoto.webp'
 import './styles.scss'
@@ -6,18 +6,22 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import { FetchData } from '../../config/Fetch'
 import { toast } from 'react-toastify'
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import ForgotPassword from './ForgotPassWord'
 import { useDispatch } from 'react-redux'
 import { appTypes } from '../../reducer/types'
 import img from '../../assets/login-page.png'
+import VisibilityIcon from '@mui/icons-material/Visibility';
 const SignIn = () => {
     const dispatch=useDispatch()
-
-
+    const [showPassWord,setShowPassword]=useState(false)
 
     const sighnUp = () => {
         navigate('/signUp')
 
+    }
+    const togglePassword=()=>{
+        setShowPassword(!showPassWord)
     }
     const schema = Yup.object().shape({
         userName: Yup.string().required("Please Enter UserName"),
@@ -28,7 +32,7 @@ const SignIn = () => {
     return (
         <>
             <div className='sighnIn row'>
-            <div className='col-lg-6 col-md-6 col-sm-12 col-xs-12 loginleftContainer'>
+            <div className='col-lg-5 col-md-5 col-sm-12 col-xs-12 loginleftContainer'>
                 <div>
                      
             <p className='primaryheader'>Welcome ! Lets get started</p>
@@ -37,7 +41,7 @@ const SignIn = () => {
 
             </div>
               
-             <div  className='authenticationContainer col-lg-6 col-md-6 col-sm-12 col-xs-12 '>
+             <div  className='authenticationContainer col-lg-7 col-md-7 col-sm-12 col-xs-12 '>
 
                    <div className='contentContainer'>
                         <p className='primaryheader'> Sighn In </p>
@@ -82,9 +86,18 @@ const SignIn = () => {
                                         </div>
                                         <div className='field'>
                                             <label>Password:</label>
-                                            <Field type='password' Required className='form-control' name='password' placeholder='password' value={values.password} />
-                                            {errors?.password && touched?.password ? <div className='text-danger'><ErrorMessage name='password' /></div> : ""}
+                                            <div className='password-container'>
+                                                
+                                            <Field type={(!showPassWord)?"password":"text"} Required className='form-control' name='password' placeholder='password' value={values.password} 
+                                            onChange={(e:any)=>{
+                                                if(!e.target.value && showPassWord){setShowPassword(false)}
+                                                setFieldValue("password",e.target.value)
+                                            }} />
+                                            {values.password &&
+                                             <span onClick={togglePassword}>{!showPassWord ? <VisibilityIcon/> :<VisibilityOffIcon/>}</span>}
+                                            </div>
                                         </div>
+                                            {errors?.password && touched?.password ? <div className='text-danger'><ErrorMessage name='password' /></div> : ""}
                                         <div>
                                             <button type='submit' className='login'> Sign In</button>
                                             <p className='singhUp'> Don't Have Account ? <span onClick={sighnUp}> Register Now </span></p>

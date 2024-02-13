@@ -18,23 +18,30 @@ const MainNavBarContainer=()=>{
             <CustomTooltip title={"Home Tab"} position={"top"}>
 
             <NavLink to="/" className={pathname == '/' ? 'selectedItem' : 'menuItem'}>
-                <HomeIcon/>
+                <span><HomeIcon/> Home </span>
             </NavLink>
             </CustomTooltip>
             <CustomTooltip title={"User Tab"} position={"top"}>
             <NavLink to="/users" className={pathname == '/users' ? 'selectedItem' : 'menuItem'}>
-                <AssignmentIndIcon/>
+                <span><AssignmentIndIcon/> Users</span>
             </NavLink>
             </CustomTooltip>
             <CustomTooltip title={"Profile"} position={"top"}>
 
             <NavLink to="/userProfile" className={pathname == '/userProfile' ? 'selectedItem' : 'menuItem'}>
-                <GroupIcon/>
+                <span>
+
+                <GroupIcon/> Profile
+                </span>
             </NavLink>
             </CustomTooltip>
             <CustomTooltip title={"Approvals Tab "} position={"top"}>
             <NavLink to="/Approvals" className={pathname.split("/").includes('Approvals') ? 'selectedItem' : 'menuItem'}>
+                <span>
+
                 <AppRegistrationIcon/>
+                Approvals
+                </span>
             </NavLink>
             </CustomTooltip>
         </div>
