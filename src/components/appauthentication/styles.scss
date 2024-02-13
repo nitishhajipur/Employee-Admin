@@ -52,6 +52,25 @@ $colr1mix:color-mix(in srgb, black 60%, white 40%);
                     font-weight: 600;
                     margin-bottom: 10px;
                 }
+                .field{
+                    .password-container{
+                        input{
+                            border-radius: 0px;
+                            border-top-left-radius: 5px;
+                            border-bottom-left-radius: 5px;
+                            border: 0;
+                        }
+                        span{
+                            background-color: white;
+                            color: black;
+                            display: flex;
+                            align-items: center;
+                            border-top-right-radius: 5px;
+                            border-bottom-right-radius: 5px;
+                        }
+                        display: flex;
+                    }
+                }
                 .login{
                                     background: rgba(65,75,47,0.75);
                                     padding:0.5rem;
